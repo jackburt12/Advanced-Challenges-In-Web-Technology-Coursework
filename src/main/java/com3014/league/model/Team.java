@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author ahsan
  */
-class Team {
+public class Team {
     private String name;
     
     private int matchPlayed;

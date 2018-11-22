@@ -9,7 +9,7 @@ package com3014.league.model;
  *
  * @author ahsan
  */
-class Player {
+public class Player {
     private String name;
     private int num;
     
