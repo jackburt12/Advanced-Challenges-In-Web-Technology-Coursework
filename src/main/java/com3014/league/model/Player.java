@@ -5,10 +5,13 @@
  */
 package com3014.league.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author ahsan
  */
+@Component
 public class Player {
     private String name;
     private int num;

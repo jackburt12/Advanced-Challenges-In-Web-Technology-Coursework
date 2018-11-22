@@ -17,4 +17,5 @@ public interface leagueService {
     public void changeName(String name);
     public void changeMaxTeam(int maxTeam);
     public void deleteLeague();
+    public void getAllTeams();
 }

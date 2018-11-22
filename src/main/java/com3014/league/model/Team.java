@@ -6,11 +6,13 @@
 package com3014.league.model;
 
 import java.util.List;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author ahsan
  */
+@Component
 public class Team {
     private String name;
     
