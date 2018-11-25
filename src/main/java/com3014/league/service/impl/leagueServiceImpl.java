@@ -5,10 +5,13 @@
  */
 package com3014.league.service.impl;
 
+import com3014.league.model.League;
 import com3014.league.model.Team;
 import org.springframework.stereotype.Service;
 import com3014.league.service.leagueService;
+import com3014.league.dao.leagueDAO;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -16,6 +19,9 @@ import java.util.List;
  */
 @Service
 public class leagueServiceImpl implements leagueService {
+    
+    @Autowired
+    leagueDAO leagueDAO;
 
     @Override
     public void removeTeam(Team team) {
@@ -43,8 +49,9 @@ public class leagueServiceImpl implements leagueService {
     }
 
     @Override
-    public void getAllTeams() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<League> getAllLeagues() {
+        List<League> leagues = leagueDAO.getAllLeagues();
+        return leagues;
     }
     
     

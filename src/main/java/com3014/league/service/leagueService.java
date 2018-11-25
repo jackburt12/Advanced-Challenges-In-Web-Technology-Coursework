@@ -5,7 +5,9 @@
  */
 package com3014.league.service;
 
+import com3014.league.model.League;
 import com3014.league.model.Team;
+import java.util.List;
 
 /**
  *
@@ -17,5 +19,5 @@ public interface leagueService {
     public void changeName(String name);
     public void changeMaxTeam(int maxTeam);
     public void deleteLeague();
-    public void getAllTeams();
+    public List<League> getAllLeagues();
 }
