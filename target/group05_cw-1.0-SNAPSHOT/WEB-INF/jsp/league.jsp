@@ -18,8 +18,8 @@
             </tr>
             <tr>
             <c:forEach items="${leagues}" varStatus="i" var="league">
-                <td> <a href="${league.id}">${league.name}</a>
-                <td> ${league.teams} / 10 </td
+                <td> <a href="${league.id}">${league.name}</a> </td>
+                <td> ${league.teams} / 10 </td>
             </c:forEach>
             </tr>
         </table>

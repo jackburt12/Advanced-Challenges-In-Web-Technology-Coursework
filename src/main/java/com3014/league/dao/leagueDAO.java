@@ -61,7 +61,7 @@ public class leagueDAO {
         teams.add(t3);
         
         Team t4 = new Team();
-        t4.setName("Arse Anal");
+        t4.setName("Tots Hams");
         t4.setMatchPlayed(1);
         t4.setWon(0);
         t4.setDraw(0);
