@@ -18,6 +18,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class leagueDAO {
     
+
     private List<League> leagues = new ArrayList<League>();
     
     public List<League> getAllLeagues() {
@@ -75,10 +76,10 @@ public class leagueDAO {
         
         return leagues;
     }
-
+    
     public List<Team> getAllTeams(int id) {
         List<Team> teams = leagues.get(id).getTeamsList();
         return teams;
     }
-    
+
 }
