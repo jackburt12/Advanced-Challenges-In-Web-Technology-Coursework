@@ -5,6 +5,8 @@
  */
 package com3014.league.controller;
 
+import com3014.league.service.fixtureService;
+import com3014.league.model.Fixture;
 import com3014.league.model.League;
 import com3014.league.model.Team;
 import com3014.league.service.leagueService;
@@ -16,8 +18,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -33,6 +37,9 @@ public class leagueController {
     
     @Autowired
     leagueService leagueService;
+    
+    @Autowired
+    fixtureService fixtureService;
     
     @RequestMapping("/all")
     public String viewProducts(ModelMap model, @ModelAttribute League league) {
@@ -55,14 +62,20 @@ public class leagueController {
         return "viewleague";
     }
     
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public @ResponseBody
-    String getForm() {
- 
-        Random rand = new Random();
-        float r = rand.nextFloat() * 100;
-        String result = "<br>Next Random # is <b>" + r + "</b>. Generated on <b>" + new Date().toString() + "</b>";
-        return result;
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    public String submitFixture(@PathVariable int id, ModelMap model, @RequestParam("home") String home,@RequestParam("away") String away,@RequestParam("homeScore") int homeScore,@RequestParam("awayScore") int awayScore) {
+        List<Team> teams = leagueService.getAllTeams(id);
+        List<Fixture> fixtures = fixtureService.getallFixtures();
+        Fixture fixture = new Fixture();
+        fixture.setHome(home);
+        fixture.setAway(away);
+        fixture.setHomeScore(homeScore);
+        fixture.setAwayScore(awayScore);
+        fixtures.add(fixture);
+        model.addAttribute("leagueid", id) ;
+        model.addAttribute("teams", teams) ;
+        model.addAttribute("fixtures", fixtures) ;
+        return "viewleague";
     }
     
     @ModelAttribute("league")

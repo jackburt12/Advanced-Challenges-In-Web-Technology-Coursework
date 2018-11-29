@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<html xmlns:th="http://www.thymeleaf.org">
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,16 +21,16 @@
     </head>
     <body>
         <button type="button" onclick="showFixtures()" id="fixButton"> Add fixtures</button>
-        <form hidden="true" id = "fixForm" action = "#" th:action="@{/add}" th:object="${fixture}" method="post">
+        <form hidden="true" id = "fixForm" action = "${league.id}" method="post">
             <br>
-            <select id = "homeTeam" th:field="*{home}" >
+            <select id = "homeTeam" name = "home">
                 <option value = "Select Team"></option>
                 <c:forEach items="${teams}" varStatus="i" var="team">
                     <option value="${team.name}">${team.name}</option>
                 </c:forEach>
             </select>
             <br>
-            <select id = "awayTeam" th:field="*{away}" >
+            <select id = "awayTeam" name = "away" >
                 <option value = "Select Team"></option>
                 <c:forEach items="${teams}" varStatus="i" var="team">
                     <option value="${team.name}">${team.name}</option>
@@ -37,10 +38,10 @@
             </select>
             <br>
             Home Score:<br>
-            <input type="text" name="homescore" value="0" id = "homeScore" th:field="*{homeScore}" >
+            <input type="text" name="homeScore" value="0" id = "homeScore">
             <br>
             Away Score:<br>
-            <input type="text" name="awayscore" value="0" id = "awayScore" th:field="*{awayScore}" >
+            <input type="text" name="awayScore" value="0" id = "awayScore">
             <br><br>
             <input type="submit" value="Submit" />  
         </form>
@@ -63,6 +64,24 @@
                 <td> ${team.loss}</td>
                 <td> ${team.goalDifference}</td>
                 <td> ${team.points}</td>
+            </tr>
+            </c:forEach>
+            
+        </table>
+            
+            
+            
+        <table>
+            <tr>
+              <th>Home</th>
+              <th>Score</th> 
+              <th>Away</th>
+            </tr>
+            <tr>
+            <c:forEach items="${fixtures}" varStatus="i" var="fixture">
+                <td> ${fixture.home} </td>
+                <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
+                <td> ${fixture.away} </td>
             </tr>
             </c:forEach>
             

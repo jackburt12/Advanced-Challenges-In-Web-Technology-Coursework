@@ -1,17 +1,11 @@
-<<<<<<< HEAD
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\service\leagueService.java
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\model\Player.java
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\model\Team.java
+D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\model\Fixture.java
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\dao\leagueDAO.java
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\model\League.java
+D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\controller\teamController.java
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\controller\leagueController.java
 D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\service\impl\leagueServiceImpl.java
-=======
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\dao\leagueDAO.java
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\controller\leagueController.java
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\service\leagueService.java
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\model\Player.java
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\model\Team.java
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\service\impl\leagueServiceImpl.java
-D:\Programming\Advanced Web Tech\group05_cw\src\main\java\com3014\league\model\League.java
->>>>>>> 4d519c04533ffd00373779e135fe475eaa2dbf1d
+D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\dao\fixtureDAO.java
+D:\Programming\Advanced Web Tech\COM3014_Group5-master\src\main\java\com3014\league\service\fixtureService.java
