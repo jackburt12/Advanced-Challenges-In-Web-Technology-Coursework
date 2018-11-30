@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html xmlns:th="http://www.thymeleaf.org">
 <!DOCTYPE html>
@@ -74,7 +74,7 @@
             <select id = "homeTeam" name = "home">
                 <option value = "Select Team"></option>
                 <c:forEach items="${teams}" varStatus="i" var="team">
-                    <option value="${team.id}">${team.name}</option>
+                    <option value="${team.id}" onclick="alert(${team.id})">${team.name}</option>
                 </c:forEach>
             </select>
             <br>
@@ -93,7 +93,6 @@
             <br><br>
             <input type="submit" value="Submit" />  
         </form>
-            
         <table>
             <tr>
               <th>Name</th>
@@ -105,6 +104,7 @@
               <th>Points</th>
             </tr>
             <tr>
+             
             <c:forEach items="${teams}" varStatus="i" var="team">
                 <td> <a href = "${leagueid}/team/${team.id}">${team.name}</a> </td>
                 <td> ${team.matchPlayed}</td>
@@ -117,9 +117,7 @@
             </c:forEach>
             
         </table>
-            
-            
-            
+
         <table>
             <tr>
               <th>Home</th>
@@ -140,13 +138,6 @@
         </table>
             
         <br>
-        <div>
-              <input type="text" placeholder="0.0.0.0" id="w-input-search" value="">
-              <span>
-                      <button id="w-button-search" type="button">Search</button>
-              </span>
-        </div>
-
         
         <style type="text/css">
             div#map_container{
@@ -155,9 +146,7 @@
             }
         </style>
 
-        <div id="map_container"></div>
-        
-        
+        <div id="map_container"></div>        
  
     </body>
 </html>

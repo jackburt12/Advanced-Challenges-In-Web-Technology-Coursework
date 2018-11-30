@@ -20,6 +20,6 @@ public interface leagueService {
     public void changeMaxTeam(int maxTeam);
     public void deleteLeague();
     public List<League> getAllLeagues();
-
+    public Team getTeamByID(int id,int teamID);
     public List<Team> getAllTeams(int id);
 }

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @author ahsan
  */
 @Component
-public class Team {
+public class Team implements Comparable<Team>{
     private int id;
     private String Name;
     
@@ -108,6 +108,10 @@ public class Team {
         this.location = location;
     }
     
+    public int compareTo(Team o)
+    {
+         return(o.points - points);
+    }
     
     
 }

@@ -10,6 +10,7 @@ import com3014.league.model.Team;
 import org.springframework.stereotype.Service;
 import com3014.league.service.leagueService;
 import com3014.league.dao.leagueDAO;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -57,9 +58,18 @@ public class leagueServiceImpl implements leagueService {
     @Override
     public List<Team> getAllTeams(int id) {
         List<Team> teams = leagueDAO.getAllTeams(id);
+        Collections.sort(teams);
         return teams;
     }
     
-    
+    @Override
+    public Team getTeamByID(int id,int teamID) {
+        List<Team> teams = leagueDAO.getAllTeams(id);
+        Team team = new Team();
+        for(Team t : teams ){
+            if(teamID == t.getId()) return t;
+        }
+        return team;
+    }
     
 }

@@ -29,7 +29,7 @@ public class leagueDAO {
         List<Team> teams = new ArrayList<Team>();
         Team t1 = new Team();
         t1.setName("Mans United");
-        t1.setMatchPlayed(1);
+        t1.setMatchPlayed(0);
         t1.setWon(0);
         t1.setDraw(0);
         t1.setLoss(0);
@@ -41,7 +41,7 @@ public class leagueDAO {
         
         Team t2 = new Team();
         t2.setName("Chill Sea");
-        t2.setMatchPlayed(1);
+        t2.setMatchPlayed(0);
         t2.setWon(0);
         t2.setDraw(0);
         t2.setLoss(0);
@@ -53,7 +53,7 @@ public class leagueDAO {
         
         Team t3 = new Team();
         t3.setName("Livers pools");
-        t3.setMatchPlayed(1);
+        t3.setMatchPlayed(0);
         t3.setWon(0);
         t3.setDraw(0);
         t3.setLoss(0);
@@ -65,7 +65,7 @@ public class leagueDAO {
         
         Team t4 = new Team();
         t4.setName("Tots Hams");
-        t4.setMatchPlayed(1);
+        t4.setMatchPlayed(0);
         t4.setWon(0);
         t4.setDraw(0);
         t4.setLoss(0);
