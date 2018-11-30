@@ -54,29 +54,31 @@ public class leagueController {
         return "index";
     }
     
-    @RequestMapping("/{id}")
+    @RequestMapping(value = "/{id}",  method = RequestMethod.GET)
     public String viewProducts(@PathVariable int id, ModelMap model, @ModelAttribute Team team) {
         List<Team> teams = leagueService.getAllTeams(id);
+        List<Fixture> fixtures = fixtureService.getallFixtures();
         model.addAttribute("leagueid", id) ;
         model.addAttribute("teams", teams) ;
+        model.addAttribute("fixtures", fixtures) ;
         return "viewleague";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public String submitFixture(@PathVariable int id, ModelMap model, @RequestParam("home") int home,@RequestParam("away") int away,@RequestParam("homeScore") int homeScore,@RequestParam("awayScore") int awayScore) {
-        List<Team> teams = leagueService.getAllTeams(id);
-        List<Fixture> fixtures = fixtureService.getallFixtures();
+        /*List<Team> teams = leagueService.getAllTeams(id);
+        List<Fixture> fixtures = fixtureService.getallFixtures();*/
         Fixture fixture = new Fixture();
         fixture.setHome(leagueService.getAllTeams(id).get(home).getName());
         fixture.setAway(leagueService.getAllTeams(id).get(away).getName());
         fixture.setHomeScore(homeScore);
         fixture.setAwayScore(awayScore);
         fixture.setLocation(leagueService.getAllTeams(id).get(home).getLocation());
-        fixtures.add(fixture);
-        model.addAttribute("leagueid", id) ;
+        fixtureService.fixtureAdd(fixture);
+        /*model.addAttribute("leagueid", id) ;
         model.addAttribute("teams", teams) ;
-        model.addAttribute("fixtures", fixtures) ;
-        return "viewleague";
+        model.addAttribute("fixtures", fixtures) ;*/
+        return "redirect:/league/{id}";
     }
     
     @ModelAttribute("league")

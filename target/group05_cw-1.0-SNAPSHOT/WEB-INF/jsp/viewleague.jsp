@@ -35,18 +35,25 @@
         });
 
 
-          function setMarkers(area) {
+          function setMarkers(area,name) {
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                    var marker = new google.maps.Marker({
                        map: map,
+                       title:name,
                        position: results[0].geometry.location
                    });
+                   google.maps.event.addListener(marker, 'click', function() {highlightFixture(name)});
                 } else {
                   alert("Geocode was not successful for the following reason: " + status);
                 }
             });
           };
+          
+          function highlightFixture(name) {
+              $($("[id='"+ name + "']")).css("background-color","#eee");
+
+          }
     </script>
     
     
@@ -119,14 +126,14 @@
               <th>Score</th> 
               <th>Away</th>
             </tr>
-            <tr>
             <c:forEach items="${fixtures}" varStatus="i" var="fixture">
+            <tr id="${fixture.home}">
                 <td> ${fixture.home} </td>
                 <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
                 <td> ${fixture.away} </td>
             </tr>
             <script type="text/javascript">
-                setMarkers("${fixture.location}");
+                setMarkers("${fixture.location}","${fixture.home}");
             </script>
             </c:forEach>
             
