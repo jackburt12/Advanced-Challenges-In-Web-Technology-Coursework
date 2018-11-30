@@ -23,6 +23,8 @@ public class Team {
     private int loss;
     private int goalDifference;
     private int points;
+    
+    private String location;
  
     private List<Player> players;
 
@@ -96,6 +98,14 @@ public class Team {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
     
     

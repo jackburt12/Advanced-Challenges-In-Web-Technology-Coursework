@@ -63,14 +63,15 @@ public class leagueController {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String submitFixture(@PathVariable int id, ModelMap model, @RequestParam("home") String home,@RequestParam("away") String away,@RequestParam("homeScore") int homeScore,@RequestParam("awayScore") int awayScore) {
+    public String submitFixture(@PathVariable int id, ModelMap model, @RequestParam("home") int home,@RequestParam("away") int away,@RequestParam("homeScore") int homeScore,@RequestParam("awayScore") int awayScore) {
         List<Team> teams = leagueService.getAllTeams(id);
         List<Fixture> fixtures = fixtureService.getallFixtures();
         Fixture fixture = new Fixture();
-        fixture.setHome(home);
-        fixture.setAway(away);
+        fixture.setHome(leagueService.getAllTeams(id).get(home).getName());
+        fixture.setAway(leagueService.getAllTeams(id).get(away).getName());
         fixture.setHomeScore(homeScore);
         fixture.setAwayScore(awayScore);
+        fixture.setLocation(leagueService.getAllTeams(id).get(home).getLocation());
         fixtures.add(fixture);
         model.addAttribute("leagueid", id) ;
         model.addAttribute("teams", teams) ;

@@ -18,7 +18,7 @@ public class Fixture {
     private String away;
     private int homeScore;
     private int awayScore;
-    private int latLng;
+    private String location;
     
     public int getId() {
         return id;
@@ -58,6 +58,14 @@ public class Fixture {
 
     public void setAwayScore(int awayScore) {
         this.awayScore = awayScore;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     

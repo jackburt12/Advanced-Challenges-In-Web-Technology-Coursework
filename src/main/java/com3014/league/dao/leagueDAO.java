@@ -36,6 +36,7 @@ public class leagueDAO {
         t1.setGoalDifference(0);
         t1.setPoints(0);
         t1.setId(0);
+        t1.setLocation("Old Trafford");
         teams.add(t1);
         
         Team t2 = new Team();
@@ -47,6 +48,7 @@ public class leagueDAO {
         t2.setGoalDifference(0);
         t2.setPoints(0);
         t2.setId(1);
+        t2.setLocation("Stamford Bridge");
         teams.add(t2);
         
         Team t3 = new Team();
@@ -58,6 +60,7 @@ public class leagueDAO {
         t3.setGoalDifference(0);
         t3.setPoints(0);
         t3.setId(2);
+        t3.setLocation("Anfield");
         teams.add(t3);
         
         Team t4 = new Team();
@@ -69,6 +72,7 @@ public class leagueDAO {
         t4.setGoalDifference(0);
         t4.setPoints(0);
         t4.setId(3);
+        t4.setLocation("White Hart Lane");
         teams.add(t4);
         l1.setTeamsList(teams);
         
