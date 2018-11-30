@@ -18,6 +18,7 @@ public class Fixture {
     private String away;
     private int homeScore;
     private int awayScore;
+    private int latLng;
     
     public int getId() {
         return id;
