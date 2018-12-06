@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  *
  * @author ahsan
+ * model class that encapsulates the team
  */
 @Component
 public class Team implements Comparable<Team>{
@@ -112,6 +113,4 @@ public class Team implements Comparable<Team>{
     {
          return(o.points - points);
     }
-    
-    
 }

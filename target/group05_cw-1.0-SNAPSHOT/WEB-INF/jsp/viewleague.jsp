@@ -19,6 +19,8 @@
             zoom: 6,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+        
+        // loads the document to show the country the league is being taken place, the place is England for this manner
         $( document ).ready(function() {
 
             map = new google.maps.Map(document.getElementById("map_container"),myOptions);
@@ -35,6 +37,7 @@
         });
 
 
+          // shows a marker on the home turf where a fixture took place
           function setMarkers(area,name) {
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
@@ -50,21 +53,21 @@
             });
           };
           
+          // highlights the fixtures that took place in the specific marker
           function highlightFixture(name) {
-              $($("[id='"+ name + "']")).css("background-color","#eee");
-
+              $(".highlight").removeClass("highlight");
+              $($("[id='"+ name + "']")).addClass("highlight");
+              
           }
-    </script>
-    
-    
-    
-    <script type="text/javascript">
+        // removes the add fixture button and shows the form for adding fixtures
         function showFixtures() {
-            $('body').prepend('jquery madness');
             $("#fixButton").hide();
             $("#fixForm").slideDown();
         };
     </script>
+    <style>
+        .highlight {background-color : #eee;};
+    </style>
     </head>
     <body >
         <button type="button" onclick="showFixtures()" id="fixButton"> Add fixtures</button>

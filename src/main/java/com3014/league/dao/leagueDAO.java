@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com3014.league.dao;
 
 import com3014.league.model.League;
@@ -21,6 +16,10 @@ public class leagueDAO {
 
     private List<League> leagues = new ArrayList<League>();
     
+    /**
+     * creates dummy data for a league model
+     * @return All the leagues present
+     */
     public List<League> getAllLeagues() {
         League l1 = new League();
         l1.setName("Barclays Sunday league");
@@ -81,6 +80,11 @@ public class leagueDAO {
         return leagues;
     }
     
+    /**
+     * 
+     * @param id
+     * @return all team within a league
+     */
     public List<Team> getAllTeams(int id) {
         List<Team> teams = leagues.get(id).getTeamsList();
         return teams;
