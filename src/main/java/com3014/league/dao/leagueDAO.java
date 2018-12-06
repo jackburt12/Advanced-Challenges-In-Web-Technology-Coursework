@@ -27,6 +27,11 @@ public class leagueDAO {
         return leagues;
     }
     
+    /**
+     * 
+     * @param id
+     * @return all team within a league
+     */
     public List<Team> getAllTeams(int id) {
         List<Team> teams = leagues.get(id).getTeamsList();
         return teams;
@@ -132,18 +137,4 @@ public class leagueDAO {
         
         leagues.add(l1);
     }
-<<<<<<< HEAD
-=======
-    
-    /**
-     * 
-     * @param id
-     * @return all team within a league
-     */
-    public List<Team> getAllTeams(int id) {
-        List<Team> teams = leagues.get(id).getTeamsList();
-        return teams;
-    }
-
->>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
 }

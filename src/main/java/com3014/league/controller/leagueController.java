@@ -5,16 +5,14 @@ import com3014.league.model.Fixture;
 import com3014.league.model.League;
 import com3014.league.model.Team;
 import com3014.league.service.leagueService;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
-=======
->>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,24 +32,25 @@ public class leagueController {
     
     @Autowired
     fixtureService fixtureService;
-    
-<<<<<<< HEAD
-    @RequestMapping(value = {"/all", "/"}, method = RequestMethod.GET)
-=======
+
     /**
      * @param model
      * @param league
      * @return all the league present in the dao
      */
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
->>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
+    @RequestMapping(value = {"/all", "/"}, method = RequestMethod.GET)
     public String viewLeagues(ModelMap model, @ModelAttribute League league) {
         model.addAttribute("leagues", leagueService.getAllLeagues());
         
         return "league";
     }
     
-<<<<<<< HEAD
+    /**
+     * @param leagueId - id of a league
+     * @param model
+     * @param team
+     * @return the specific chosen league by its ID
+     */
     @RequestMapping(value = "/{leagueId}",  method = RequestMethod.GET)
     public String viewLeagues(@PathVariable int leagueId, ModelMap model, @ModelAttribute Team team) {
         League league = leagueService.getAllLeagues().get(leagueId);
@@ -61,22 +60,6 @@ public class leagueController {
         model.addAttribute("teams", teams) ;
         model.addAttribute("fixtures", fixtures) ;
         return "viewLeague";
-=======
-    /**
-     * @param id - of a league
-     * @param model
-     * @param team
-     * @return the specific chosen league by its ID
-     */
-    @RequestMapping(value = "/{id}",  method = RequestMethod.GET)
-    public String viewLeague(@PathVariable int id, ModelMap model, @ModelAttribute Team team) {
-        List<Team> teams = leagueService.getAllTeams(id);
-        List<Fixture> fixtures = fixtureService.getallFixtures();
-        model.addAttribute("leagueid", id);
-        model.addAttribute("teams", teams);
-        model.addAttribute("fixtures", fixtures);
-        return "viewleague";
->>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
     }
     
     /**
@@ -153,12 +136,9 @@ public class leagueController {
     public Team populateTeam() {
         return new Team();
     }
-<<<<<<< HEAD
     
     public static List<Team> sortByPoints(List<Team> teams) {
         Collections.sort(teams);
         return teams;
     }
-=======
->>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
 }

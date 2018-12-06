@@ -158,7 +158,10 @@
         height:500px;
     }
 </style>
-
+<c:url var="logoutUrl" value="/j_spring_security_logout"/>
+        <form action="${logoutUrl}" method="post">
+            <input type="submit" value="Logout"/>
+</form>
 <div class="container" id="map_container"></div>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="/group05_cw/league/all">League Viewer</a>
