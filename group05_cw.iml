@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration />
@@ -44,7 +44,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:4.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-test:4.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.0.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:4.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc-portlet:4.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-websocket:4.0.1.RELEASE" level="project" />
@@ -54,5 +54,8 @@
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet.jsp:jsp-api:2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-web-api:7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.security:spring-security-config:4.0.1.RELEASE" level="project" />
   </component>
 </module>
