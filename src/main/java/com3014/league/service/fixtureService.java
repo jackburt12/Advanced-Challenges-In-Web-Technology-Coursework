@@ -23,10 +23,19 @@ public class fixtureService {
     @Autowired
     fixtureDAO fixtureDAO;
     
+    /**
+     * 
+     * @param fixture 
+     * adds a fixture to the database
+     */
     public void fixtureAdd(Fixture fixture){
         fixtureDAO.fixtureAdd(fixture);
     }
     
+    /**
+     * 
+     * @return all the fixture
+     */
     public List<Fixture> getallFixtures(){
         return fixtureDAO.getFixtures();
     }

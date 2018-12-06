@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  *
  * @author ahsan
+ * model class that encapsulates the leagues
  */
 @Component
 public class League {

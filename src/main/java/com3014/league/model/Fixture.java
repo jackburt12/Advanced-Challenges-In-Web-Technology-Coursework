@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  *
  * @author ahsan
+ * model class that encapsulates the fixtures
  */
 @Component
 public class Fixture {
@@ -67,8 +68,4 @@ public class Fixture {
     public void setLocation(String location) {
         this.location = location;
     }
-
-    
-    
-    
 }

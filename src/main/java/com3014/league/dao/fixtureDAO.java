@@ -24,12 +24,21 @@ public class fixtureDAO {
         fixtures = new ArrayList<Fixture>();
     }
     
+    /**
+     * 
+     * @param fixture 
+     * adds the fixture to the list of fixtures present
+     */
     public void fixtureAdd(Fixture fixture){
         fixture.setId(num);
         num++;
         fixtures.add(fixture);
     }
 
+    /**
+     * 
+     * @return all the fixtures
+     */
     public List<Fixture> getFixtures() {
         return fixtures;
     }

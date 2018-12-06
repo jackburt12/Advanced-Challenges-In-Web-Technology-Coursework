@@ -20,6 +20,8 @@
             zoom: 6,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+        
+        // loads the document to show the country the league is being taken place, the place is England for this manner
         $( document ).ready(function() {
 
             map = new google.maps.Map(document.getElementById("map_container"),myOptions);
@@ -36,6 +38,7 @@
         });
 
 
+          // shows a marker on the home turf where a fixture took place
           function setMarkers(area,name) {
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
@@ -51,20 +54,36 @@
             });
           };
           
+          // highlights the fixtures that took place in the specific marker
           function highlightFixture(name) {
-              $($("[id='"+ name + "']")).css("background-color","#eee");
-
+              $(".highlight").removeClass("highlight");
+              $($("[id='"+ name + "']")).addClass("highlight");
+              
           }
+<<<<<<< HEAD
     </script>
 
     <script type="text/javascript">
+=======
+        // removes the add fixture button and shows the form for adding fixtures
+>>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
         function showFixtures() {
             $("#fixButton").hide();
             $("#fixForm").show();
             $("#fixForm").slideDown();
         };
     </script>
+<<<<<<< HEAD
     
+=======
+    <style>
+        .highlight {background-color : #eee;};
+        div#map_container{
+            width:600px;
+            height:500px;
+        }
+    </style>
+>>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -122,6 +141,7 @@
             </script>
             </c:forEach>
         </table>
+<<<<<<< HEAD
         </div>
         
         <div class="container">
@@ -163,6 +183,10 @@
                     height:500px;
             }
         </style>
+=======
+            
+        <br>
+>>>>>>> c765bc6ac834b20722c78420931416bcd53d2d11
 
         <div class="container" id="map_container"></div>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

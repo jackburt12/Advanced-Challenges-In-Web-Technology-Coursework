@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  *
  * @author ahsan
+ * model class that encapsulates the player
  */
 @Component
 public class Player {
