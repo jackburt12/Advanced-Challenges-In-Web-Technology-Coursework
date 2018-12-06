@@ -67,6 +67,10 @@
     </script>
     <style>
         .highlight {background-color : #eee;};
+        div#map_container{
+            width:600px;
+            height:500px;
+        }
     </style>
     </head>
     <body >
@@ -141,13 +145,6 @@
         </table>
             
         <br>
-        
-        <style type="text/css">
-            div#map_container{
-                    width:600px;
-                    height:500px;
-            }
-        </style>
 
         <div id="map_container"></div>        
  
