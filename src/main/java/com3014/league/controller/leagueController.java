@@ -38,7 +38,7 @@ public class leagueController {
      * @param league
      * @return all the league present in the dao
      */
-    @RequestMapping(value = {"/all", "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/all"}, method = RequestMethod.GET)
     public String viewLeagues(ModelMap model, @ModelAttribute League league) {
         model.addAttribute("leagues", leagueService.getAllLeagues());
         
@@ -56,10 +56,10 @@ public class leagueController {
         League league = leagueService.getAllLeagues().get(leagueId);
         List<Team> teams = leagueService.getAllTeams(leagueId);
         List<Fixture> fixtures = fixtureService.getallFixtures();
-        model.addAttribute("league", league) ;
-        model.addAttribute("teams", teams) ;
-        model.addAttribute("fixtures", fixtures) ;
-        return "viewLeague";
+        model.addAttribute("league", league);
+        model.addAttribute("teams", teams);
+        model.addAttribute("fixtures", fixtures);
+        return "viewleague";
     }
     
     /**
