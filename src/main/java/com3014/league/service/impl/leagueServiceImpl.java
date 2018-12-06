@@ -25,39 +25,48 @@ public class leagueServiceImpl implements leagueService {
     leagueDAO leagueDAO;
 
     @Override
-    public void removeTeam(Team team) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void removeTeam(int teamId, int leagueId) {
+        leagueDAO.getAllTeams(leagueId).remove(teamId);
     }
 
     @Override
-    public void addTeam(Team team) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addTeam(Team team, int leagueId) {
+        leagueDAO.getAllLeagues().get(leagueId).setTeam(team);
     }
 
     @Override
-    public void changeName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void changeName(String name, int leagueId) {
+        leagueDAO.getAllLeagues().get(leagueId).setName(name);
     }
 
     @Override
-    public void changeMaxTeam(int maxTeam) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void changeMaxTeam(int maxTeam, int leagueId) {
+        leagueDAO.getAllLeagues().get(leagueId).setMaxTeams(maxTeam);
     }
 
     @Override
-    public void deleteLeague() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteLeague(League league) {
+        leagueDAO.getAllLeagues().remove(league);
+    }
+    
+    @Override
+    public void deleteLeague(int leagueId) {
+        List<League> leagues = leagueDAO.getAllLeagues();
+        for (League l : leagues) {
+            if (l.getId() == leagueId) {
+                leagues.remove(l);
+            }
+        }
     }
 
     @Override
     public List<League> getAllLeagues() {
-        List<League> leagues = leagueDAO.getAllLeagues();
-        return leagues;
+        return leagueDAO.getAllLeagues();
     }
 
     @Override
-    public List<Team> getAllTeams(int id) {
-        List<Team> teams = leagueDAO.getAllTeams(id);
+    public List<Team> getAllTeams(int leagueId) {
+        List<Team> teams = leagueDAO.getAllTeams(leagueId);
         Collections.sort(teams);
         return teams;
     }
@@ -71,5 +80,4 @@ public class leagueServiceImpl implements leagueService {
         }
         return team;
     }
-    
 }

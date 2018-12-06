@@ -16,16 +16,13 @@ import org.springframework.stereotype.Component;
 public class Team implements Comparable<Team>{
     private int id;
     private String Name;
-    
     private int matchPlayed;
     private int won;
     private int draw;
     private int loss;
     private int goalDifference;
     private int points;
-    
     private String location;
- 
     private List<Player> players;
 
     public int getId() {

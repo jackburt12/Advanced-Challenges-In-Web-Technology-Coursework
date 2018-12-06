@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class League {
     private int id;
     private String Name;
-    private int teams;
+    private int maxTeams;
     private List<Team> teamsList;
 
     public int getId() {
@@ -35,12 +35,12 @@ public class League {
         this.Name = Name;
     }
 
-    public int getTeams() {
-        return teams;
+    public int getMaxTeams() {
+        return maxTeams;
     }
 
-    public void setTeams(int teams) {
-        this.teams = teams;
+    public void setMaxTeams(int maxTeams) {
+        this.maxTeams = maxTeams;
     }
 
     public List<Team> getTeamsList() {
@@ -51,4 +51,11 @@ public class League {
         this.teamsList = teamsList;
     }
     
+    public Team getTeam(int teamId) {
+        return teamsList.get(teamId);
+    }
+    
+    public void setTeam(Team team) {
+        teamsList.add(team);
+    }
 }

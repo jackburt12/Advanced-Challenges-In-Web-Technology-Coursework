@@ -14,11 +14,12 @@ import java.util.List;
  * @author ahsan
  */
 public interface leagueService {
-    public void removeTeam(Team team);
-    public void addTeam(Team team);
-    public void changeName(String name);
-    public void changeMaxTeam(int maxTeam);
-    public void deleteLeague();
+    public void removeTeam(int teamId, int leagueId);
+    public void addTeam(Team team, int leagueId);
+    public void changeName(String name, int leagueId);
+    public void changeMaxTeam(int maxTeam, int leagueId);
+    public void deleteLeague(League league);
+    public void deleteLeague(int leagueId);
     public List<League> getAllLeagues();
     public Team getTeamByID(int id,int teamID);
     public List<Team> getAllTeams(int id);

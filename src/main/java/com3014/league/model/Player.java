@@ -14,8 +14,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class Player {
     private String name;
-    private int num;
+    private int number;
     
+    public void setName(String name) {
+        this.name = name;
+    }
     
+    public String getName(){
+        return this.name;
+    }
     
+    public void setNumber(int number) {
+        this.number = number;
+    }
+    
+    public int getNumber() {
+        return this.number;
+    }
 }
