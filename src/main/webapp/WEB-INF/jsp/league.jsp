@@ -23,5 +23,10 @@
             </c:forEach>
             </tr>
         </table>
+
+        <c:url var="logoutUrl" value="/j_spring_security_logout"/>
+        <form action="${logoutUrl}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
     </body>
 </html>

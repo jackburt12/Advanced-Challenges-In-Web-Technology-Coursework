@@ -146,7 +146,12 @@
             
         <br>
 
-        <div id="map_container"></div>        
+        <div id="map_container"></div>
+
+        <c:url var="logoutUrl" value="/j_spring_security_logout"/>
+        <form action="${logoutUrl}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
  
     </body>
 </html>
