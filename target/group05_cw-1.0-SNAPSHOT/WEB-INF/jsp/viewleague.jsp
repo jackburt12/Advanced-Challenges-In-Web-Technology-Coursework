@@ -62,6 +62,16 @@
             $("#fixButton").hide();
             $("#fixForm").slideDown();
         }
+        
+        var optValue;
+        function showFixtures2(name) {
+            $("#awayTeam option[value='" + optValue + "']").show();
+            optValue = name.value;
+            $(".form-group2").hide();
+            $("#awayTeam").val('');
+            $(".form-group2").slideDown();
+            $("#awayTeam option[value='" + optValue + "']").hide();
+        }
             
     </script>
     
@@ -74,6 +84,9 @@
             height:500px;
         }
         #fixForm {
+            display:none;
+        }
+        .form-group2{
             display:none;
         }
     </style>
@@ -144,31 +157,32 @@
                 <h3>Enter Match Details</h3>
                 <div class="form-group">
                 <label for="homeTeam">Home Team:</label>
-                <select id="homeTeam" name="home">
-                    <option value = "Select Team"></option>
+                <select id="homeTeam" name="home" onchange="showFixtures2(this)">
+                    <option value = "SelectTeam"></option>
                     <c:forEach items="${teams}" varStatus="i" var="team">
-                        <option value="${team.id}">${team.name}</option>
+                        <option value="${team.id}" >${team.name}</option>
                     </c:forEach>
                 </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group2">
                 <label for="awayTeam">Away Team:</label>
                 <select id = "awayTeam" name = "away" >
-                    <option value = "Select Team"></option>
+                    <option value = "SelectTeam"></option>
                     <c:forEach items="${teams}" varStatus="i" var="team">
                         <option value="${team.id}">${team.name}</option>
                     </c:forEach>
                 </select>
-                </div>
+                
                 <div class="form-group">
                 <label for="homeScore">Home Score:</label>
-                <input type="text" name="homeScore" value="0" id = "homeScore">
+                <input type="number" name="homeScore" value="0" id = "homeScore">
                 </div>
                 <div class="form-group">
                 <label for="awayTeam">Away Team:</label>
-                <input type="text" name="awayScore" value="0" id = "awayScore">
+                <input type="number" min="1" step="1" name="awayScore" value="0" id = "awayScore">
                 </div>
-                <input type="submit" value="Submit" />  
+                <input type="submit" value="Submit" /> 
+                </div>
             </form>
             </div>
         </div>

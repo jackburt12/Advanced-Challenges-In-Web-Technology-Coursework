@@ -113,7 +113,8 @@ public class leagueController {
         fixture.setAway(awayTeam.getName());
         fixture.setHomeScore(homeScore);
         fixture.setAwayScore(awayScore);
-        fixture.setLocation(leagueService.getAllTeams(id).get(home).getLocation());
+        fixture.setLocation(homeTeam.getLocation());
+        System.out.println(homeTeam.getLocation());
         fixtureService.fixtureAdd(fixture);
         return "redirect:/league/{id}";
     }
