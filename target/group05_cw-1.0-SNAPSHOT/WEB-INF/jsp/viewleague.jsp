@@ -8,9 +8,11 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <title>${league.name}</title>
-        <!-- JQuery -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBFjl1kuYl8NPCiendKbjzNPT-F0RxuAHo&sensor=true"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyBFjl1kuYl8NPCiendKbjzNPT-F0RxuAHo&sensor=true"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
     
     <script type="text/javascript">
         var setMarkers;
@@ -58,8 +60,8 @@
           }
         function showFixtures() {
             $("#fixButton").hide();
-            $("#fixForm").show();
             $("#fixForm").slideDown();
+        }
             
     </script>
     
@@ -71,11 +73,10 @@
             width:600px;
             height:500px;
         }
+        #fixForm {
+            display:none;
+        }
     </style>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
     </head>
     <body>
@@ -136,37 +137,40 @@
         </table>
         </div>
         
-        <div class="container">
-            <h3>Enter Match Details</h3>
-        <form id="fixForm" action="${league.id}" method="post">
-            <div class="form-group">
-            <label for="homeTeam">Home Team:</label>
-            <select id="homeTeam" name="home">
-                <option value = "Select Team"></option>
-                <c:forEach items="${teams}" varStatus="i" var="team">
-                    <option value="${team.id}">${team.name}</option>
-                </c:forEach>
-            </select>
+        <button id="fixButton" onclick="showFixtures()"> Add results </button>
+        <div id="fixForm">
+            <form action="${league.id}" method="post">
+                <div class="container">
+                <h3>Enter Match Details</h3>
+                <div class="form-group">
+                <label for="homeTeam">Home Team:</label>
+                <select id="homeTeam" name="home">
+                    <option value = "Select Team"></option>
+                    <c:forEach items="${teams}" varStatus="i" var="team">
+                        <option value="${team.id}">${team.name}</option>
+                    </c:forEach>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="awayTeam">Away Team:</label>
+                <select id = "awayTeam" name = "away" >
+                    <option value = "Select Team"></option>
+                    <c:forEach items="${teams}" varStatus="i" var="team">
+                        <option value="${team.id}">${team.name}</option>
+                    </c:forEach>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="homeScore">Home Score:</label>
+                <input type="text" name="homeScore" value="0" id = "homeScore">
+                </div>
+                <div class="form-group">
+                <label for="awayTeam">Away Team:</label>
+                <input type="text" name="awayScore" value="0" id = "awayScore">
+                </div>
+                <input type="submit" value="Submit" />  
+            </form>
             </div>
-            <div class="form-group">
-            <label for="awayTeam">Away Team:</label>
-            <select id = "awayTeam" name = "away" >
-                <option value = "Select Team"></option>
-                <c:forEach items="${teams}" varStatus="i" var="team">
-                    <option value="${team.id}">${team.name}</option>
-                </c:forEach>
-            </select>
-            </div>
-            <div class="form-group">
-            <label for="homeScore">Home Score:</label>
-            <input type="text" name="homeScore" value="0" id = "homeScore">
-            </div>
-            <div class="form-group">
-            <label for="awayTeam">Away Team:</label>
-            <input type="text" name="awayScore" value="0" id = "awayScore">
-            </div>
-            <input type="submit" value="Submit" />  
-        </form>
         </div>
 
         <c:url var="logoutUrl" value="/j_spring_security_logout"/>
