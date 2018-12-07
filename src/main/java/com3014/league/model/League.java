@@ -52,25 +52,11 @@ public class League {
         this.teamsList = teamsList;
     }
     
-    public Team getTeamByID(int teamId) {
-        Team team = null;
-        for (Team t: teamsList) {
-            if (t.getId() == teamId) {
-                team = t;
-            }
-        }
-        return team;
+    public Team getTeam(int teamId) {
+        return teamsList.get(teamId);
     }
     
     public void setTeam(Team team) {
         teamsList.add(team);
-    }
-    
-    public void deleteTeam(int teamId) {
-        teamsList.remove(getTeamByID(teamId));
-    }
-    
-    public void updateTeam(int teamId, Team team) {
-        teamsList.set(teamsList.indexOf(getTeamByID(teamId)), team);
     }
 }

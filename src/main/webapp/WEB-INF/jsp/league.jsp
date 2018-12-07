@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +13,14 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="/group05_cw/league/all">League Viewer</a>
+    <a class="navbar-brand" href="/league/all">League Viewer</a>
+    <sec:authorize access="isAuthenticated()">
+        <c:url var="logoutUrl" value="/j_spring_security_logout"/>
+        <form action="${logoutUrl}" method="post">
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Logout"/>
+        </form>
+    </sec:authorize>
+
 </nav>
 <div class="jumbotron text-center">
     <div class="container">
@@ -24,35 +33,16 @@
             <th>Name</th>
             <th>Teams</th>
         </tr>
+        <tr>
             <c:forEach items="${leagues}" varStatus="i" var="league">
-                <tr>
                 <td> <a href="${league.id}">${league.name}</a> </td>
                 <td> ${league.teamsList.size()} / ${league.maxTeams} </td>
-                </tr>
             </c:forEach>
+        </tr>
     </table>
 </div>
-    <div class="container">
-        <h3>Create New League</h3>
-        <form id="leagueForm" action="all" method="post">
-            <div class="form-group">
-            <label for="leagueName">League Name:</label>
-            <input type="text" name="leagueName" value="0" id="leagueName">
-            </div>
-            <div class="form-group">
-            <label for="leagueMaxTeams">Max Number of Teams:</label>
-            <input type="text" name="leagueMaxTeams" value="0" id="leagueMaxTeams">
-            </div>
-            <input type="submit" value="Submit" />  
-        </form>
-        </div>
 
-    <div class="container">
-    <c:url var="logoutUrl" value="/j_spring_security_logout"/>
-        <form action="${logoutUrl}" method="post">
-            <input type="submit" value="Logout"/>
-        </form>
-    </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

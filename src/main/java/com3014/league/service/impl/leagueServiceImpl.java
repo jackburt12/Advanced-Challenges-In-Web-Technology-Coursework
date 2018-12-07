@@ -25,8 +25,8 @@ public class leagueServiceImpl implements leagueService {
     leagueDAO leagueDAO;
 
     @Override
-    public void deleteTeam(int teamId, int leagueId) {
-        leagueDAO.deleteTeam(teamId, leagueId);
+    public void removeTeam(int teamId, int leagueId) {
+        leagueDAO.getAllTeams(leagueId).remove(teamId);
     }
 
     @Override
@@ -35,23 +35,28 @@ public class leagueServiceImpl implements leagueService {
     }
 
     @Override
-    public void updateName(String name, int leagueId) {
+    public void changeName(String name, int leagueId) {
         leagueDAO.getAllLeagues().get(leagueId).setName(name);
     }
 
     @Override
-    public void updateMaxTeam(int maxTeam, int leagueId) {
+    public void changeMaxTeam(int maxTeam, int leagueId) {
         leagueDAO.getAllLeagues().get(leagueId).setMaxTeams(maxTeam);
     }
 
     @Override
     public void deleteLeague(League league) {
-        leagueDAO.deleteLeague(league);
+        leagueDAO.getAllLeagues().remove(league);
     }
     
     @Override
     public void deleteLeague(int leagueId) {
-        leagueDAO.deleteLeague(leagueId);
+        List<League> leagues = leagueDAO.getAllLeagues();
+        for (League l : leagues) {
+            if (l.getId() == leagueId) {
+                leagues.remove(l);
+            }
+        }
     }
 
     @Override
@@ -67,27 +72,12 @@ public class leagueServiceImpl implements leagueService {
     }
     
     @Override
-    public Team getTeamByID(int leagueId,int teamId) {
-        return leagueDAO.getTeamByID(leagueId, teamId);
-    }
-
-    @Override
-    public League getLeagueByID(int leagueId) {
-        return leagueDAO.getLeague(leagueId);
-    }
-
-    @Override
-    public void updateLeague(int leagueId, League league) {
-        leagueDAO.updateLeague(leagueId, league);
-    }
-
-    @Override
-    public void addLeague(League league) {
-        leagueDAO.addLeague(league);
-    }
-
-    @Override
-    public void updateTeam(int teamId, Team team, int leagueId) {
-        leagueDAO.updateTeam(teamId, team, leagueId);
+    public Team getTeamByID(int id,int teamID) {
+        List<Team> teams = leagueDAO.getAllTeams(id);
+        Team team = new Team();
+        for(Team t : teams ){
+            if(teamID == t.getId()) return t;
+        }
+        return team;
     }
 }

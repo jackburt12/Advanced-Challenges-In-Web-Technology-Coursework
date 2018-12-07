@@ -12,20 +12,15 @@ import java.util.List;
 /**
  *
  * @author ahsan
- * @author matt
  */
 public interface leagueService {
-    public List<League> getAllLeagues();
-    public League getLeagueByID(int leagueId);
-    public void addLeague(League league);
-    public void updateLeague(int leagueId, League league);
+    public void removeTeam(int teamId, int leagueId);
+    public void addTeam(Team team, int leagueId);
+    public void changeName(String name, int leagueId);
+    public void changeMaxTeam(int maxTeam, int leagueId);
     public void deleteLeague(League league);
     public void deleteLeague(int leagueId);
+    public List<League> getAllLeagues();
     public Team getTeamByID(int id,int teamID);
-    public void deleteTeam(int teamId, int leagueId);
-    public void addTeam(Team team, int leagueId);
-    public void updateTeam(int teamId, Team team, int leagueId);
-    public void updateName(String name, int leagueId);
-    public void updateMaxTeam(int maxTeam, int leagueId);
     public List<Team> getAllTeams(int id);
 }
