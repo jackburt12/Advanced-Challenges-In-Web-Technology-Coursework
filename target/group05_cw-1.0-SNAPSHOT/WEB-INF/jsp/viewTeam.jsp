@@ -16,7 +16,11 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="/group05_cw/league/all">League Viewer</a>
+    <a class="navbar-brand" href="/league/all">League Viewer</a>
+    <c:url var="logoutUrl" value="/j_spring_security_logout"/>
+    <form action="${logoutUrl}" method="post">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Logout"/>
+    </form>
 </nav>
 <div class="jumbotron text-center">
     <div class="container">
@@ -44,14 +48,6 @@
     <p>Points: ${team.points}</p>
 
 </div>
-
-<div class="container">
-    <c:url var="logoutUrl" value="/j_spring_security_logout"/>
-    <form action="${logoutUrl}" method="post">
-        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Logout"/>
-    </form>
-</div>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

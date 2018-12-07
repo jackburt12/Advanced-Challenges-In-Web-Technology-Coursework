@@ -12,7 +12,6 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<<<<<<< HEAD
 
         <style type="text/css">
             .highlight{
@@ -46,14 +45,8 @@
         </style>
     
         <script type="text/javascript">
-        var setMarkers;
-=======
-    
-    
-    <script type="text/javascript">
         
         // google map launched in this variable
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
         var map;
         
         // geocoder for coding within the map
@@ -80,7 +73,7 @@
         });
 
         // sets marker to the location variable in the team model
-          function setMarkers(area,name) {
+        function setMarkers(area,name) {
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                    var marker = new google.maps.Marker({
@@ -94,32 +87,20 @@
                 }
             });
           };
-<<<<<<< HEAD
 
+          // highlights what fixture took place in a certain marker
         function highlightFixture(name) {
               $(".highlight").removeClass("highlight")
               $($("[id='"+ name + "']")).addClass("highlight");
-
         }
-=======
-          
-          // highlights what fixture took place in a certain marker
-          function highlightFixture(name) {
-              $(".highlight").removeClass("highlight")
-              $($("[id='"+ name + "']")).addClass("highlight");
-          }
           
           // shows home team form in 
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
         function showFixtures() {
             $("#fixButton").hide();
             $("#fixForm").slideDown();
         }
         
-<<<<<<< HEAD
-=======
         // shows the rest of the form
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
         var optValue;
         var opt;
         function showFixtures2(name) {
@@ -135,45 +116,15 @@
         }
             
     </script>
-<<<<<<< HEAD
 
-=======
-    
-    <style type="text/css">
-        .highlight{
-            background-color: #eee;
-        }
-        #map_container{
-            width:400px;
-            height:500px;
-        }
-        #fixForm {
-            display:none;
-        }
-        .form-group2{
-            display:none;
-        }
-        #fixButton {
-            position: relative;
-            bottom: 20px;
-        }
-        .fixContainer {
-            position: relative;
-            width:60%;
-            overflow-y:auto;
-            height: 500px;
-        }
-        .containerRight {
-            width:35%;
-            margin-left:5%;
-        }
-    </style>
-    
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="/group05_cw/league/all">League Viewer</a>  
+            <a class="navbar-brand" href="/league/all">League Viewer</a>
+            <c:url var="logoutUrl" value="/j_spring_security_logout"/>
+            <form action="${logoutUrl}" method="post">
+                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Logout"/>
+            </form>
         </nav>
         <div class="jumbotron text-center">
         <div class="container">
@@ -182,11 +133,7 @@
         </div>
             
         <div class="container">
-<<<<<<< HEAD
             <h3>League Table</h3>
-=======
-            <h3>Teams</h3>
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
         <table class="table">
             <tr>
               <th>Name</th>
@@ -215,11 +162,7 @@
             <div class="row">
             <div class="col-xs-8 fixContainer">
                 <div class="container">
-<<<<<<< HEAD
                     <h3>Results</h3>
-=======
-                    <h3>Fixtures</h3>
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
                     <table class="table">
                         <tr>
                           <th>Home</th>
@@ -237,11 +180,7 @@
                         </script>
                         </c:forEach>
                     </table>
-<<<<<<< HEAD
                 <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add Result </button>
-=======
-                <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add results </button>
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
 
                 <div id="fixForm">
                         <form action="${league.id}" method="post">
@@ -285,13 +224,6 @@
                 <div class="container" id="map_container"></div>
             </div>
         </div>
-        </div>
-        <br>
-        <div class="container">
-            <c:url var="logoutUrl" value="/j_spring_security_logout"/>
-            <form action="${logoutUrl}" method="post">
-                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Logout"/>
-            </form>
         </div>
         <br>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
