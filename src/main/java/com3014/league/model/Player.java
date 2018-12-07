@@ -14,16 +14,13 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Player {
-    public enum Position {GOALKEEPER, DEFENDER, MIDFIELDER, FORWARD};
-
     private String name;
     private int number;
-    private Position position;
-
+    
     public void setName(String name) {
         this.name = name;
     }
-
+    
     public String getName(){
         return this.name;
     }
@@ -34,13 +31,5 @@ public class Player {
     
     public int getNumber() {
         return this.number;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
     }
 }
