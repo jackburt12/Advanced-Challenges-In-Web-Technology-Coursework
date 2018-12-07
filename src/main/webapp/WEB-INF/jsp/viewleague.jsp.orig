@@ -12,7 +12,6 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<<<<<<< HEAD
 
         <style type="text/css">
             .highlight{
@@ -45,10 +44,10 @@
 
         </style>
     
+<<<<<<< HEAD
         <script type="text/javascript">
         var setMarkers;
 =======
-    
     
     <script type="text/javascript">
         
@@ -79,8 +78,13 @@
             }); 
         });
 
+<<<<<<< HEAD
+
+        function setMarkers(area,name) {
+=======
         // sets marker to the location variable in the team model
           function setMarkers(area,name) {
+>>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                    var marker = new google.maps.Marker({
@@ -116,10 +120,7 @@
             $("#fixForm").slideDown();
         }
         
-<<<<<<< HEAD
-=======
         // shows the rest of the form
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
         var optValue;
         var opt;
         function showFixtures2(name) {
@@ -182,11 +183,7 @@
         </div>
             
         <div class="container">
-<<<<<<< HEAD
             <h3>League Table</h3>
-=======
-            <h3>Teams</h3>
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
         <table class="table">
             <tr>
               <th>Name</th>
@@ -215,11 +212,7 @@
             <div class="row">
             <div class="col-xs-8 fixContainer">
                 <div class="container">
-<<<<<<< HEAD
                     <h3>Results</h3>
-=======
-                    <h3>Fixtures</h3>
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
                     <table class="table">
                         <tr>
                           <th>Home</th>
@@ -237,11 +230,7 @@
                         </script>
                         </c:forEach>
                     </table>
-<<<<<<< HEAD
                 <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add Result </button>
-=======
-                <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add results </button>
->>>>>>> 0a949e6bfbfa164de1da216822b2b945d95bfd66
 
                 <div id="fixForm">
                         <form action="${league.id}" method="post">

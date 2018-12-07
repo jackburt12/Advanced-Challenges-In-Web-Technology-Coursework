@@ -7,18 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64e467ab-f341-4bba-a1a4-ee19e05c8ba1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/dao/leagueDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/dao/leagueDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/dao/leagueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/dao/leagueDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/model/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/dao/leagueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/dao/leagueDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewTeam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewTeam.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -148,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
-              <caret line="159" column="51" selection-start-line="159" selection-start-column="51" selection-end-line="159" selection-end-column="51" />
+              <caret line="225" column="51" selection-start-line="225" selection-start-column="51" selection-end-line="225" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -289,11 +281,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="2577" />
-    <option name="height" value="1410" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="22" />
+    <option name="y" value="540" />
+    <option name="width" value="1943" />
+    <option name="height" value="1103" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -431,7 +423,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544199130902" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544199520553" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -601,18 +593,18 @@
       <workItem from="1544118426184" duration="1489000" />
       <workItem from="1544124935532" duration="238000" />
       <workItem from="1544125187042" duration="59000" />
-      <workItem from="1544195662571" duration="3435000" />
+      <workItem from="1544195662571" duration="3693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5858000" />
+    <option name="totallyTimeSpent" value="6116000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="18" y="432" width="1554" height="882" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23557048" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23493975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -622,7 +614,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.46950355" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44192258" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -717,7 +709,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
-          <caret line="159" column="51" selection-start-line="159" selection-start-column="51" selection-end-line="159" selection-end-column="51" />
+          <caret line="225" column="51" selection-start-line="225" selection-start-column="51" selection-end-line="225" selection-end-column="51" />
         </state>
       </provider>
     </entry>

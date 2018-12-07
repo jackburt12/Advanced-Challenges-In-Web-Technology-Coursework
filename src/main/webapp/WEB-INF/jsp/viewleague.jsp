@@ -45,13 +45,18 @@
         </style>
     
         <script type="text/javascript">
-        var setMarkers;
+        
+        // google map launched in this variable
         var map;
+        
+        // geocoder for coding within the map
         var geocoder = new google.maps.Geocoder();
         var myOptions = {
             zoom: 6,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+        
+        // launches the map on document ready and moves it to show England on the map
         $( document ).ready(function() {
 
             map = new google.maps.Map(document.getElementById("map_container"),myOptions);
@@ -67,7 +72,7 @@
             }); 
         });
 
-
+        // sets marker to the location variable in the team model
         function setMarkers(area,name) {
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
@@ -83,24 +88,31 @@
             });
           };
 
+          // highlights what fixture took place in a certain marker
         function highlightFixture(name) {
               $(".highlight").removeClass("highlight")
               $($("[id='"+ name + "']")).addClass("highlight");
-
         }
+          
+          // shows home team form in 
         function showFixtures() {
             $("#fixButton").hide();
             $("#fixForm").slideDown();
         }
         
+        // shows the rest of the form
         var optValue;
+        var opt;
         function showFixtures2(name) {
-            $("#awayTeam option[value='" + optValue + "']").show();
+            $("#awayTeam").append(opt);
             optValue = name.value;
             $(".form-group2").hide();
             $("#awayTeam").val('');
+            $("#homeScore").val('0');
+            $("#awayScore").val('0');
             $(".form-group2").slideDown();
-            $("#awayTeam option[value='" + optValue + "']").hide();
+            opt = $("#awayTeam option[value='" + optValue + "']");
+            $("#awayTeam option[value='" + optValue + "']").remove();
         }
             
     </script>
