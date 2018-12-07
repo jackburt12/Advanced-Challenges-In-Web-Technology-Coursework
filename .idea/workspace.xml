@@ -6,167 +6,64 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64e467ab-f341-4bba-a1a4-ee19e05c8ba1" name="Default Changelist" comment="">
+    <list default="true" id="6c1a39ff-a32c-4ab7-9a89-949e12f16e6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/controller/teamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/controller/teamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/dao/fixtureDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/dao/fixtureDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/dao/leagueDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/dao/leagueDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/model/Fixture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/model/Fixture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/model/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/model/League.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/model/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/service/fixtureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/service/fixtureService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/service/impl/leagueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/service/impl/leagueServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com3014/league/service/leagueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com3014/league/service/leagueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/league.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/league.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewLeague.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewLeague.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/redirect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/redirect.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/controller/leagueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/controller/leagueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/dao/leagueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/dao/leagueDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/model/League.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/model/League.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/model/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/service/impl/leagueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/service/impl/leagueServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com3014/league/service/leagueService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com3014/league/service/leagueService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/Tomcat.dpf" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/Tomcat.dpf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/league.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/league.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewTeam.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewTeam.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/controller/leagueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/controller/leagueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/dao/leagueDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/dao/leagueDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/model/League.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/model/League.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/model/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/service/impl/leagueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/service/impl/leagueServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/service/leagueService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/service/leagueService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/classes/com3014/league/service/teamService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/redirect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/redirect.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-1542126998">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="7" />
-          <entry key="jsp" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="7" />
-          <entry key="JSP" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1594476406">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="jsp" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JSP" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="jsp" value="200" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JSP" value="200" />
-        </counts>
-      </usages-collector>
-    </session>
     <session id="-621135792">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="516351744">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="10" />
-          <entry key="jsp" value="8" />
-          <entry key="orig" value="1" />
+          <entry key="java" value="1" />
+          <entry key="jsp" value="1" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="10" />
-          <entry key="JSP" value="8" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="1" />
+          <entry key="JSP" value="1" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="535" />
-          <entry key="jsp" value="462" />
-          <entry key="xml" value="38" />
+          <entry key="java" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="535" />
-          <entry key="JSP" value="462" />
-          <entry key="XML" value="38" />
+          <entry key="JAVA" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -174,47 +71,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/model/Team.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="749">
+              <caret line="134" column="53" selection-start-line="134" selection-start-column="53" selection-end-line="134" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/service/leagueService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1610">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/redirect.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/spring-security.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/dispatcher-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -222,40 +91,74 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/league.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="612">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="704">
+              <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/model/League.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/teamController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/service/impl/leagueServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewLeague.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+            <state relative-caret-position="817">
+              <caret line="230" column="7" selection-start-line="230" selection-start-column="7" selection-end-line="230" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -266,25 +169,14 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewLeague.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com3014/league/model/Team.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com3014/league/model/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com3014/league/dao/leagueDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/league.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/league.jsp" />
-        <option value="$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com3014/league/model/Team.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java" />
       </list>
     </option>
   </component>
@@ -309,10 +201,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="30" />
-    <option name="y" value="-24" />
-    <option name="width" value="1945" />
-    <option name="height" value="1105" />
+    <option name="x" value="468" />
+    <option name="y" value="603" />
+    <option name="width" value="1932" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -320,8 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,15 +261,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="league" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COM3014_Group5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COM3014_Group5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="league" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -396,10 +277,7 @@
               <item name="COM3014_Group5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="league" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="COM3014_Group5" type="b2602c69:ProjectViewProjectNode" />
@@ -407,6 +285,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="COM3014_Group5" type="b2602c69:ProjectViewProjectNode" />
@@ -425,41 +304,16 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="COM3014_Group5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COM3014_Group5" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COM3014_Group5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COM3014_Group5" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="group05_cw-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COM3014_Group5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COM3014_Group5" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="group05_cw-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544203501907" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544214298866" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -474,7 +328,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="TOmcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="group05_cw:war">
@@ -484,7 +338,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_COM3014_Group5_4" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_COM3014_Group5_2" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -627,13 +481,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10967000" />
+    <option name="totallyTimeSpent" value="1715000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1410" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23557048" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23211446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -643,7 +496,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.46950355" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.242163" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -652,7 +505,7 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32836992" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
@@ -670,154 +523,54 @@
       <window_info anchor="right" id="Bean Validation" order="11" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague2.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/teamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1610">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/service/fixtureService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/dao/fixtureDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/model/Fixture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/model/Team.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="749">
+          <caret line="134" column="53" selection-start-line="134" selection-start-column="53" selection-end-line="134" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/teamController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewLeague.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding>
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/dao/leagueDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="114" column="10" selection-start-line="114" selection-start-column="10" selection-end-line="114" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp.orig" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="817">
+          <caret line="230" column="7" selection-start-line="230" selection-start-column="7" selection-end-line="230" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewTeam.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/model/League.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/service/impl/leagueServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/service/leagueService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="160" column="21" lean-forward="true" selection-start-line="160" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
+        <state relative-caret-position="222">
+          <caret line="161" column="19" selection-start-line="161" selection-start-column="19" selection-end-line="161" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague2.jsp" />
-    <entry file="file://$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/viewleague.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="187" column="32" lean-forward="true" selection-start-line="187" selection-start-column="32" selection-end-line="187" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/group05_cw-1.0-SNAPSHOT/WEB-INF/jsp/league.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/league.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com3014/league/controller/leagueController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/viewleague.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="306">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -106,8 +106,36 @@ public class Team implements Comparable<Team>{
         this.location = location;
     }
     
+    public Player getPlayerByNumber(int playerNum) {
+        Player player = null;
+        for (Player p: players) {
+            if (p.getNumber() == playerNum) {
+                player = p;
+            }
+        }
+        return player;
+    }
+    
+    public void deletePlayer(int playerNum) {
+        players.remove(getPlayerByNumber(playerNum));
+    }
+    
+    public void updatePlayer(int playerNum, Player player) {
+        players.set(players.indexOf(getPlayerByNumber(playerNum)), player);
+    }
+    
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
+    
+    @Override
     public int compareTo(Team o)
     {
-         return(o.points - points);
+        if(o.points==points) {
+            return o.goalDifference - goalDifference;
+        } else {
+            return(o.points - points);
+
+        }
     }
 }

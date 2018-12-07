@@ -42,6 +42,28 @@
     </table>
 </div>
 
+<div class="container">
+    <h3>Create New League</h3>
+    <form id="leagueForm" action="all" method="post">
+        <div class="form-group">
+        <label for="leagueName">League Name:</label>
+        <input type="text" name="leagueName" value="0" id="leagueName">
+        </div>
+        <div class="form-group">
+        <label for="leagueMaxTeams">Max Number of Teams:</label>
+        <input type="text" name="leagueMaxTeams" value="0" id="leagueMaxTeams">
+        </div>
+        <input type="submit" value="Submit" />  
+    </form>
+    </div>
+
+<div class="container">
+<c:url var="logoutUrl" value="/j_spring_security_logout"/>
+    <form action="${logoutUrl}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
