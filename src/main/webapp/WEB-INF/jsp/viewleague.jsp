@@ -80,7 +80,7 @@
             background-color: #eee;
         }
         #map_container{
-            width:600px;
+            width:400px;
             height:500px;
         }
         #fixForm {
@@ -89,6 +89,22 @@
         .form-group2{
             display:none;
         }
+        #fixButton {
+            position: relative;
+            bottom: 20px;
+        }
+        .fixContainer {
+            position: relative;
+            width:60%;
+            overflow-y:auto;
+            height: 500px;
+        }
+        .containerRight {
+            width:35%;
+            margin-left:5%;
+        }
+
+
     </style>
     
     </head>
@@ -128,70 +144,73 @@
             </c:forEach>
         </table>
         </div>
-            
         <div class="container">
-            <h3>Fixtures</h3>
-        <table class="table">
-            <tr>
-              <th>Home</th>
-              <th>Score</th> 
-              <th>Away</th>
-            </tr>
-            <c:forEach items="${fixtures}" varStatus="i" var="fixture">
-            <tr id="${fixture.home}">
-                <td> ${fixture.home} </td>
-                <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
-                <td> ${fixture.away} </td>
-            </tr>
-            <script type="text/javascript">
-                setMarkers("${fixture.location}","${fixture.home}");
-            </script>
-            </c:forEach>
-        </table>
-        </div>
-        
-        <button id="fixButton" onclick="showFixtures()"> Add results </button>
-        <div id="fixForm">
-            <form action="${league.id}" method="post">
+            <div class="row">
+            <div class="col-xs-8 fixContainer">
                 <div class="container">
-                <h3>Enter Match Details</h3>
-                <div class="form-group">
-                <label for="homeTeam">Home Team:</label>
-                <select id="homeTeam" name="home" onchange="showFixtures2(this)">
-                    <option value = "SelectTeam"></option>
-                    <c:forEach items="${teams}" varStatus="i" var="team">
-                        <option value="${team.id}" >${team.name}</option>
-                    </c:forEach>
-                </select>
+                    <h3>Fixtures</h3>
+                    <table class="table">
+                        <tr>
+                          <th>Home</th>
+                          <th>Score</th>
+                          <th>Away</th>
+                        </tr>
+                        <c:forEach items="${fixtures}" varStatus="i" var="fixture">
+                        <tr id="${fixture.home}">
+                            <td> ${fixture.home} </td>
+                            <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
+                            <td> ${fixture.away} </td>
+                        </tr>
+                        <script type="text/javascript">
+                            setMarkers("${fixture.location}","${fixture.home}");
+                        </script>
+                        </c:forEach>
+                    </table>
+                <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add results </button>
+
+                <div id="fixForm">
+                        <form action="${league.id}" method="post">
+                            <div class="container">
+                                <h3>Enter Match Details</h3>
+                                <div class="form-group">
+                                    <label for="homeTeam">Home Team:</label>
+                                    <select id="homeTeam" name="home" onchange="showFixtures2(this)">
+                                        <option value = "SelectTeam"></option>
+                                        <c:forEach items="${teams}" varStatus="i" var="team">
+                                            <option value="${team.id}" >${team.name}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <div class="form-group2">
+                                    <label for="awayTeam">Away Team:</label>
+                                    <select id = "awayTeam" name = "away" >
+                                        <option value = "SelectTeam"></option>
+                                        <c:forEach items="${teams}" varStatus="i" var="team">
+                                            <option value="${team.id}">${team.name}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="homeScore">Home Score:</label>
+                                    <input type="number" min="0" step="1" name="homeScore" value="0" id = "homeScore">
+                                </div>
+                                <div class="form-group">
+                                    <label for="awayTeam">Away Team:</label>
+                                    <input type="number" min="0" step="1" name="awayScore" value="0" id = "awayScore">
+                                </div>
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
-                <div class="form-group2">
-                <label for="awayTeam">Away Team:</label>
-                <select id = "awayTeam" name = "away" >
-                    <option value = "SelectTeam"></option>
-                    <c:forEach items="${teams}" varStatus="i" var="team">
-                        <option value="${team.id}">${team.name}</option>
-                    </c:forEach>
-                </select>
-                
-                <div class="form-group">
-                <label for="homeScore">Home Score:</label>
-                <input type="number" name="homeScore" value="0" id = "homeScore">
-                </div>
-                <div class="form-group">
-                <label for="awayTeam">Away Team:</label>
-                <input type="number" min="1" step="1" name="awayScore" value="0" id = "awayScore">
-                </div>
-                <input type="submit" value="Submit" /> 
-                </div>
-            </form>
+            </div>
+            <div class="col-xs-4 containerRight">
+                <div class="container" id="map_container"></div>
             </div>
         </div>
-
-        <c:url var="logoutUrl" value="/j_spring_security_logout"/>
-        <form action="${logoutUrl}" method="post">
-            <input type="submit" value="Logout"/>
-        </form>
-        <div class="container" id="map_container"></div>
+        </div>
         <br>
         <div class="container">
             <c:url var="logoutUrl" value="/j_spring_security_logout"/>
