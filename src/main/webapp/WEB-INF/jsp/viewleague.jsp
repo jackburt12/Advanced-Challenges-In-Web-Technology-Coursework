@@ -12,9 +12,39 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <style type="text/css">
+            .highlight{
+                background-color: #eee;
+            }
+            #map_container{
+                width:400px;
+                height:500px;
+            }
+            #fixForm {
+                display:none;
+            }
+            .form-group2{
+                display:none;
+            }
+            #fixButton {
+                position: relative;
+                bottom: 20px;
+            }
+            .fixContainer {
+                position: relative;
+                width:60%;
+                overflow-y:auto;
+                height: 500px;
+            }
+            .containerRight {
+                width:35%;
+                margin-left:5%;
+            }
+
+        </style>
     
-    
-    <script type="text/javascript">
+        <script type="text/javascript">
         var setMarkers;
         var map;
         var geocoder = new google.maps.Geocoder();
@@ -38,7 +68,7 @@
         });
 
 
-          function setMarkers(area,name) {
+        function setMarkers(area,name) {
             geocoder.geocode( { 'address': area }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                    var marker = new google.maps.Marker({
@@ -52,12 +82,12 @@
                 }
             });
           };
-          
-          function highlightFixture(name) {
+
+        function highlightFixture(name) {
               $(".highlight").removeClass("highlight")
               $($("[id='"+ name + "']")).addClass("highlight");
 
-          }
+        }
         function showFixtures() {
             $("#fixButton").hide();
             $("#fixForm").slideDown();
@@ -74,39 +104,7 @@
         }
             
     </script>
-    
-    <style type="text/css">
-        .highlight{
-            background-color: #eee;
-        }
-        #map_container{
-            width:400px;
-            height:500px;
-        }
-        #fixForm {
-            display:none;
-        }
-        .form-group2{
-            display:none;
-        }
-        #fixButton {
-            position: relative;
-            bottom: 20px;
-        }
-        .fixContainer {
-            position: relative;
-            width:60%;
-            overflow-y:auto;
-            height: 500px;
-        }
-        .containerRight {
-            width:35%;
-            margin-left:5%;
-        }
 
-
-    </style>
-    
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -119,7 +117,7 @@
         </div>
             
         <div class="container">
-            <h3>Teams</h3>
+            <h3>League Table</h3>
         <table class="table">
             <tr>
               <th>Name</th>
@@ -148,7 +146,7 @@
             <div class="row">
             <div class="col-xs-8 fixContainer">
                 <div class="container">
-                    <h3>Fixtures</h3>
+                    <h3>Results</h3>
                     <table class="table">
                         <tr>
                           <th>Home</th>
@@ -166,7 +164,7 @@
                         </script>
                         </c:forEach>
                     </table>
-                <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add results </button>
+                <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add Result </button>
 
                 <div id="fixForm">
                         <form action="${league.id}" method="post">

@@ -61,13 +61,14 @@ public class leagueDAO {
     
     public void addTestData() {
         League l1 = new League();
-        l1.setName("Barclays Sunday League");
-        l1.setMaxTeams(4);
+        l1.setName("English Premier League");
+        l1.setMaxTeams(20);
         l1.setId(0);
+
         List<Team> teams = new ArrayList<>();
         
         Team t1 = new Team();
-        t1.setName("Mans United");
+        t1.setName("Manchester United F.C.");
         t1.setMatchPlayed(0);
         t1.setWon(0);
         t1.setDraw(0);
@@ -78,18 +79,20 @@ public class leagueDAO {
         t1.setLocation("Old Trafford");
         List<Player> pL1 = new ArrayList<>();
         Player p1 = new Player();
-        p1.setName("testplayer");
-        p1.setNumber(7);
+        p1.setName("Anthony Martial");
+        p1.setNumber(11);
+        p1.setPosition(Player.Position.FORWARD);
         pL1.add(p1);
         Player p2 = new Player();
-        p2.setName("Name Surname");
-        p2.setNumber(69);
+        p2.setName("Luke Shaw");
+        p2.setNumber(3);
+        p2.setPosition(Player.Position.DEFENDER);
         pL1.add(p2);
         t1.setPlayers(pL1);
         teams.add(t1);
         
         Team t2 = new Team();
-        t2.setName("Chill Sea");
+        t2.setName("Chelsea F.C.");
         t2.setMatchPlayed(0);
         t2.setWon(0);
         t2.setDraw(0);
@@ -100,18 +103,20 @@ public class leagueDAO {
         t2.setLocation("Stamford Bridge");
         List<Player> pL2 = new ArrayList<>();
         Player p3 = new Player();
-        p3.setName("testplayer");
-        p3.setNumber(7);
+        p3.setName("Eden Hazard");
+        p3.setNumber(10);
+        p3.setPosition(Player.Position.FORWARD);
         pL2.add(p3);
         Player p4 = new Player();
-        p4.setName("Name Surname");
-        p4.setNumber(69);
+        p4.setName("N'golo Kante");
+        p4.setNumber(7);
+        p4.setPosition(Player.Position.MIDFIELDER);
         pL2.add(p4);
-        t1.setPlayers(pL2);
+        t2.setPlayers(pL2);
         teams.add(t2);
         
         Team t3 = new Team();
-        t3.setName("Livers pools");
+        t3.setName("Liverpool F.C.");
         t3.setMatchPlayed(0);
         t3.setWon(0);
         t3.setDraw(0);
@@ -123,7 +128,7 @@ public class leagueDAO {
         teams.add(t3);
         
         Team t4 = new Team();
-        t4.setName("Tots Hams");
+        t4.setName("Tottenham Hotspur F.C.");
         t4.setMatchPlayed(0);
         t4.setWon(0);
         t4.setDraw(0);

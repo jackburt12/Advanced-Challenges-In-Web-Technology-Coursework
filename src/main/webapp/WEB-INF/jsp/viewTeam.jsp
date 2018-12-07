@@ -1,4 +1,5 @@
-<%-- 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
     Document   : viewTeam
     Created on : 03-Dec-2018, 13:06:37
     Author     : matt
@@ -28,17 +29,19 @@
         <tr>
             <th>Player Number</th>
             <th>Player Name</th>
+            <th>Player Position</th>
         </tr>
         <c:forEach var="player" items="${team.players}">
             <tr>
                 <td><c:out value="${player.number}"/></td>
                 <td>${player.name}</td>
+                <td>${player.position}</td>
             </tr>
         </c:forEach>
     </table>
+
     <p>Matches played: ${team.matchPlayed}</p>
     <p>Points: ${team.points}</p>
-    <p>${team.players.get(0).name}</p>
 
 </div>
 
