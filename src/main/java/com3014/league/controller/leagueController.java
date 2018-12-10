@@ -89,7 +89,7 @@ public class leagueController {
         model.addAttribute("league", league) ;
         model.addAttribute("teams", teams) ;
         model.addAttribute("fixtures", fixtures) ;
-        return "viewleague";
+        return "viewLeague";
     }
     
     /**
