@@ -47,11 +47,11 @@
     <form id="leagueForm" action="all" method="post">
         <div class="form-group">
         <label for="leagueName">League Name:</label>
-        <input type="text" name="leagueName" value="0" id="leagueName">
+        <input type="text" name="leagueName" value="0" id="leagueName" htmlEscape="true">
         </div>
         <div class="form-group">
         <label for="leagueMaxTeams">Max Number of Teams:</label>
-        <input type="text" name="leagueMaxTeams" value="0" id="leagueMaxTeams">
+        <input type="text" name="leagueMaxTeams" value="0" id="leagueMaxTeams" htmlEscape="true">
         </div>
         <input type="submit" value="Submit" />  
     </form>

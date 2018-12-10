@@ -81,7 +81,7 @@ public class leagueController {
         model.addAttribute("league", league) ;
         model.addAttribute("teams", teams) ;
         model.addAttribute("fixtures", fixtures) ;
-        return "viewLeague";
+        return "viewleague";
     }
     
     @RequestMapping(value = "/{leagueId}/delete", method = RequestMethod.GET)

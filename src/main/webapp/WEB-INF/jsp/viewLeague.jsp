@@ -111,6 +111,8 @@
             opt = $("#awayTeam option[value='" + optValue + "']");
             $("#awayTeam option[value='" + optValue + "']").remove();
         }
+        
+        
 
     </script>
 
@@ -181,7 +183,7 @@
                     <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add Result </button>
                 </sec:authorize>
                 <div id="fixForm">
-                    <form action="${league.id}" method="post">
+                    <form action="${league.id}" method="post" >
                         <div class="container">
                             <h3>Enter Match Details</h3>
                             <div class="form-group">
