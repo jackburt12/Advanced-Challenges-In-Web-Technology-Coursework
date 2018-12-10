@@ -20,6 +20,16 @@ public class Player {
     private int number;
     private Position position;
 
+    public Player() {
+        this("", 0, Position.GOALKEEPER);
+    }
+
+    public Player(String name, int number, Position position) {
+        this.name = name;
+        this.number = number;
+        this.position = position;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
