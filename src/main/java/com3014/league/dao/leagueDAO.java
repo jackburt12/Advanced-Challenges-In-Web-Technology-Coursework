@@ -1,5 +1,6 @@
 package com3014.league.dao;
 
+import com3014.league.model.Fixture;
 import com3014.league.model.League;
 import com3014.league.model.Player;
 import com3014.league.model.Team;
@@ -87,6 +88,25 @@ public class leagueDAO {
     
     public void deleteTeam(int teamId, int leagueId) {
         getLeague(leagueId).getTeamsList().remove(getTeamByID(teamId, leagueId));
+    }
+    public Fixture getFixtureByID(int fixtureId, int leagueId) {
+        return getLeague(leagueId).getFixtureByID(fixtureId);
+    }
+
+    public void addFixture(Fixture fixture, int leagueId) {
+        getLeague(leagueId).addFixture(fixture);
+    }
+
+    public void updateFixture(int fixtureId, Fixture fixture, int leagueId) {
+        getLeague(leagueId).updateFixture(fixture, fixtureId);
+    }
+
+    public void deleteFixture(int fixtureId, int leagueId) {
+        getLeague(leagueId).deleteFixture(fixtureId);
+    }
+
+    public List<Fixture> getAllFixtures(int leagueId) {
+        return getLeague(leagueId).getFixturesList();
     }
     public void addTestData() {
         League l1 = new League();

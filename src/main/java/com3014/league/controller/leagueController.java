@@ -147,7 +147,7 @@ public class leagueController {
             homeTeam.setDraw(homeTeam.getDraw()+1);
             homeTeam.setPoints(homeTeam.getPoints()+1);
         }
-        
+
         // creates a new fixture in the league
         Fixture fixture = new Fixture();
         fixture.setHome(homeTeam.getName());
@@ -155,7 +155,17 @@ public class leagueController {
         fixture.setHomeScore(homeScore);
         fixture.setAwayScore(awayScore);
         fixture.setLocation(homeTeam.getLocation());
-        fixtureService.fixtureAdd(fixture);
+
+        int highestId = 0;
+        // Create a new unique ID for the new fixture
+        List<Fixture> fixtureList = leagueService.getAllFixtures(leagueId);
+        for (Fixture f: fixtureList) {
+            if (f.getId() > highestId) {
+                highestId = f.getId();
+            }
+        }
+        fixture.setId(highestId + 1);
+        leagueService.addFixture(fixture, leagueId);
         return "redirect:/league/{leagueId}";
     }
     

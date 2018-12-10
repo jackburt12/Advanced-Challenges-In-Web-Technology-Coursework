@@ -5,6 +5,7 @@
  */
 package com3014.league.service.impl;
 
+import com3014.league.model.Fixture;
 import com3014.league.model.League;
 import com3014.league.model.Team;
 import org.springframework.stereotype.Service;
@@ -90,4 +91,31 @@ public class leagueServiceImpl implements leagueService {
     public void updateTeam(int teamId, Team team, int leagueId) {
         leagueDAO.updateTeam(teamId, team, leagueId);
     }
+
+    @Override
+    public Fixture getFixtureByID(int fixtureId, int leagueId) {
+        return leagueDAO.getFixtureByID(fixtureId, leagueId);
+    }
+
+    @Override
+    public void addFixture(Fixture fixture, int leagueId) {
+        leagueDAO.addFixture(fixture, leagueId);
+    }
+
+    @Override
+    public void updateFixture(int fixtureId, Fixture fixture, int leagueId) {
+        leagueDAO.updateFixture(fixtureId, fixture, leagueId);
+    }
+
+    @Override
+    public void deleteFixture(int fixtureId, int leagueId) {
+        leagueDAO.deleteFixture(fixtureId, leagueId);
+    }
+
+    @Override
+    public List<Fixture> getAllFixtures(int leagueId) {
+        return leagueDAO.getAllFixtures(leagueId);
+    }
+
+
 }

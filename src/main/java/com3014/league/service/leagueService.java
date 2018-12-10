@@ -5,6 +5,7 @@
  */
 package com3014.league.service;
 
+import com3014.league.model.Fixture;
 import com3014.league.model.League;
 import com3014.league.model.Team;
 import java.util.List;
@@ -28,4 +29,10 @@ public interface leagueService {
     public void updateName(String name, int leagueId);
     public void updateMaxTeam(int maxTeam, int leagueId);
     public List<Team> getAllTeams(int id);
+    public Fixture getFixtureByID(int fixtureId, int leagueId);
+    public void addFixture(Fixture fixture, int leagueId);
+    public void updateFixture(int fixtureId, Fixture fixture, int leagueId);
+    public void deleteFixture(int fixtureId, int leagueId);
+    public List<Fixture> getAllFixtures(int leagueId);
+
 }

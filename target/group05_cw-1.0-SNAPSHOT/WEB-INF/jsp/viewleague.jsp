@@ -197,7 +197,7 @@
                         <th>Score</th>
                         <th>Away</th>
                     </tr>
-                    <c:forEach items="${fixtures}" varStatus="i" var="fixture">
+                    <c:forEach items="${league.fixturesList}" varStatus="i" var="fixture">
                         <tr id="${fixture.home}">
                             <td> ${fixture.home} </td>
                             <td> ${fixture.homeScore} - ${fixture.awayScore}</td>

@@ -5,6 +5,7 @@
  */
 package com3014.league.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +19,8 @@ public class League {
     private int id;
     private String Name;
     private int maxTeams;
-    private List<Team> teamsList;
+    private List<Team> teamsList = new ArrayList<>();
+    private List<Fixture> fixturesList = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -73,4 +75,35 @@ public class League {
     public void updateTeam(int teamId, Team team) {
         teamsList.set(teamsList.indexOf(getTeamByID(teamId)), team);
     }
+
+    public Fixture getFixtureByID(int fixtureId) {
+        Fixture fixture = new Fixture();
+        for (Fixture f: fixturesList) {
+            if (f.getId() == fixtureId) {
+                fixture = f;
+            }
+        }
+        return fixture;
+    }
+
+    public List<Fixture> getFixturesList() {
+        return fixturesList;
+    }
+
+    public void setFixturesList(List<Fixture> fixturesList) {
+        this.fixturesList = fixturesList;
+    }
+
+    public void addFixture(Fixture fixture) {
+        fixturesList.add(fixture);
+    }
+
+    public void updateFixture(Fixture fixture, int fixtureId) {
+        fixturesList.set(fixturesList.indexOf(getFixtureByID(fixtureId)), fixture);
+    }
+
+    public void deleteFixture(int fixtureId) {
+        fixturesList.remove(getFixtureByID(fixtureId));
+    }
+
 }
