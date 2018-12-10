@@ -46,6 +46,14 @@ public class leagueController {
         return "league";
     }
     
+    /**
+     * Makes a new accessible league
+     * @param model
+     * @param league
+     * @param leagueName
+     * @param leagueMaxTeams
+     * @return redirects back to the url to show posted league
+     */
     @RequestMapping(value = {"/all", "/"}, method = RequestMethod.POST)
     public String submitLeague(ModelMap model, @ModelAttribute League league, @RequestParam("leagueName") String leagueName, @RequestParam("leagueMaxTeams") int leagueMaxTeams) {
         League newLeague = new League();
@@ -84,6 +92,11 @@ public class leagueController {
         return "viewleague";
     }
     
+    /**
+     * 
+     * @param leagueId
+     * @return the url with the league deleted
+     */
     @RequestMapping(value = "/{leagueId}/delete", method = RequestMethod.GET)
     public String deleteLeague(@PathVariable int leagueId) {
         leagueService.deleteLeague(leagueId);
@@ -91,7 +104,7 @@ public class leagueController {
     }
     
     /**
-     * 
+     * Adds a fixture to the list of fixtures in a league and updates team results
      * @param leagueId - id of league in which the fixture will be updated on
      * @param model
      * @param home - in int, so its unique
@@ -152,6 +165,14 @@ public class leagueController {
     //    return "redirect:/league/{leagueId}";
     //}
     
+    /**
+     * 
+     * @param leagueId
+     * @param teamId
+     * @param model
+     * @param team
+     * @return a specific league page displaying tables and fixtures
+     */
     @RequestMapping(value = "/{leagueId}/team/{teamId}",  method = RequestMethod.GET)
     public String viewTeams(
             @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @ModelAttribute Team team
@@ -163,6 +184,14 @@ public class leagueController {
         return "viewTeam";
     }
     
+    /**
+     * 
+     * @param leagueId
+     * @param teamId
+     * @param model
+     * @param team
+     * @return the same url with the teams deleted
+     */
     @RequestMapping(value = "/{leagueId}/team/{teamId}/delete",  method = RequestMethod.GET)
     public String deleteTeam(
             @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @ModelAttribute Team team
@@ -179,10 +208,5 @@ public class leagueController {
     @ModelAttribute("team")
     public Team populateTeam() {
         return new Team();
-    }
-    
-    public static List<Team> sortByPoints(List<Team> teams) {
-        Collections.sort(teams);
-        return teams;
     }
 }
