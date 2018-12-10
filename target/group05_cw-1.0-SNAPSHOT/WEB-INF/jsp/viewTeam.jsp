@@ -14,6 +14,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>${team.name}</title>
+
+    <style>
+        #playerForm {
+            display:none;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        function showPlayerForm() {
+            $("#playerFormButton").hide();
+            $("#playerForm").slideDown();
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -44,6 +58,36 @@
             </tr>
         </c:forEach>
     </table>
+    <br>
+    <sec:authorize access="hasRole('ADMIN')">
+        <button class="btn btn-lg btn-primary btn-block" id="playerFormButton" onclick="showPlayerForm()"> Add Player </button>
+    </sec:authorize>
+    <div id="playerForm">
+        <h3>Add a Player</h3>
+        <form action="./${team.id}" method="post">
+            <div class="form-group">
+                <label for="name">Player Name:  </label>
+                <input type="text" name="name" value="" placeholder="Player Name" maxlength="25" id="name">
+            </div>
+            <div class="form-group">
+                <label for="number">Player Number:  </label>
+                <input type="number" name="number" value="" placeholder="Player Number" id="number" max="99">
+            </div>
+            <div class="form-group">
+                <label for="position">Player Position:  </label>
+                <select id="position" name="position">
+                    <option value="GOALKEEPER">Goalkeeper</option>
+                    <option value="DEFENDER">Defender</option>
+                    <option value="MIDFIELDER">Midfielder</option>
+                    <option value="FORWARD">Forward</option>
+
+                </select>
+            </div>
+            <input type="hidden" name="leagueId" value="${league.id}">
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
+        </form>
+    </div>
+    <br>
 
     <p>Matches played: ${team.matchPlayed}</p>
     <p>Points: ${team.points}</p>
@@ -56,7 +100,7 @@
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>

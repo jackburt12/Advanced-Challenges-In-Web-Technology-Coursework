@@ -150,4 +150,24 @@ public class leagueDAO {
         leagues.add(l1);
 
     }
+
+    public Player getPlayerByNumber(int playerNum, int teamId, int leagueId) {
+        return getLeague(leagueId).getTeamByID(teamId).getPlayerByNumber(playerNum);
+    }
+
+    public void addPlayer(Player player, int teamId, int leagueId) {
+        getLeague(leagueId).getTeamByID(teamId).addPlayer(player);
+    }
+
+    public void updatePlayer(int playerNum, Player player, int teamId, int leagueId) {
+        getLeague(leagueId).getTeamByID(teamId).updatePlayer(playerNum, player);
+    }
+
+    public void deletePlayer(int playerNum, int teamId, int leagueId) {
+        getLeague(leagueId).getTeamByID(teamId).deletePlayer(playerNum);
+    }
+
+    public List<Player> getAllPlayers(int teamId, int leagueId) {
+        return getLeague(leagueId).getTeamByID(teamId).getPlayers();
+    }
 }

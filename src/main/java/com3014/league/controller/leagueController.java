@@ -43,7 +43,7 @@ public class leagueController {
     @RequestMapping(value = {"/all", "/"}, method = RequestMethod.GET)
     public String viewLeagues(ModelMap model, @ModelAttribute League league) {
         model.addAttribute("leagues", leagueService.getAllLeagues());
-        
+
         return "league";
     }
     
@@ -121,7 +121,13 @@ public class leagueController {
     public String submitFixture(@PathVariable int leagueId, ModelMap model, @RequestParam("home") int home,@RequestParam("away") int away,@RequestParam("homeScore") int homeScore,@RequestParam("awayScore") int awayScore) {
         Team homeTeam = leagueService.getTeamByID(home,leagueId);
         Team awayTeam = leagueService.getTeamByID(away,leagueId);
-        
+        if(homeTeam == null || awayTeam == null) {
+            return "redirect:/league/{leagueId}";
+        }
+
+        if(homeScore<0 || awayScore<0 || homeScore > 99 || awayScore > 99) {
+            return "redirect:/league/{leagueId}";
+        }
         // using the home goals and away goals, it determines if home or away won or both drew and updates the 2 teams stats
         if(homeScore > awayScore ) {
             homeTeam.setMatchPlayed(homeTeam.getMatchPlayed()+1);
@@ -184,6 +190,11 @@ public class leagueController {
             @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @ModelAttribute Team team
     ) {
         Team thisTeam = leagueService.getTeamByID(teamId,leagueId);
+
+        if(thisTeam == null) {
+            return "redirect:/league/{leagueId}";
+        }
+
         List<Player> thisPlayers = thisTeam.getPlayers();
         model.addAttribute("team", thisTeam);
         model.addAttribute("players", thisPlayers);
@@ -231,5 +242,24 @@ public class leagueController {
         leagueService.addTeam(team, leagueId);
 
         return "redirect:/league/" + Integer.toString(leagueId);
+    }
+
+    @RequestMapping(value = "/{leagueId}/team/{teamId}",  method = RequestMethod.POST)
+    public String addPlayer(
+            @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @RequestParam("number") int number,
+            @RequestParam("name") String name, @RequestParam("position") Player.Position position) {
+        Player newPlayer = new Player();
+        newPlayer.setName(name);
+        newPlayer.setNumber(number);
+        newPlayer.setPosition(position);
+        leagueService.addPlayer(newPlayer, teamId, leagueId);
+        return "redirect:/league/{leagueId}/team/{teamId}";
+    }
+
+    @RequestMapping(value = "/{leagueId}/delete_fixture", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String deleteFixture(@PathVariable int leagueId, @RequestParam int fixtureId) {
+        leagueService.deleteFixture(fixtureId, leagueId);
+        return "redirect:/league/{leagueId}";
     }
 }

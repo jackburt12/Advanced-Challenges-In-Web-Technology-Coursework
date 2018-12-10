@@ -8,6 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>${league.name}</title>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyBFjl1kuYl8NPCiendKbjzNPT-F0RxuAHo&sensor=true"></script>
@@ -196,12 +197,23 @@
                         <th>Home</th>
                         <th>Score</th>
                         <th>Away</th>
+                        <sec:authorize access="hasRole('ADMIN')">
+                            <th>Delete</th>
+                        </sec:authorize>
                     </tr>
                     <c:forEach items="${league.fixturesList}" varStatus="i" var="fixture">
                         <tr>
                             <td> ${fixture.home.name} </td>
                             <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
                             <td> ${fixture.away.name} </td>
+                            <sec:authorize access="hasRole('ADMIN')">
+                                <td>
+                                    <form action="/league/${league.id}/delete_fixture" method="get">
+                                        <input type="hidden" name="fixtureId" value="${fixture.id}"/>
+                                        <button class="fa fa-trash" aria-hidden="true" type="submit"/>
+                                    </form>
+                                </td>
+                            </sec:authorize>
                         </tr>
                         <script type="text/javascript">
                             setMarkers("${fixture.home.location}","${fixture.home.name}");

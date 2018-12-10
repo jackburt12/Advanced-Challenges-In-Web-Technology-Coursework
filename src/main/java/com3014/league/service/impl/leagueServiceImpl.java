@@ -7,6 +7,7 @@ package com3014.league.service.impl;
 
 import com3014.league.model.Fixture;
 import com3014.league.model.League;
+import com3014.league.model.Player;
 import com3014.league.model.Team;
 import org.springframework.stereotype.Service;
 import com3014.league.service.leagueService;
@@ -117,5 +118,40 @@ public class leagueServiceImpl implements leagueService {
         return leagueDAO.getAllFixtures(leagueId);
     }
 
+    @Override
+    public Player getPlayerByNumber(int playerNum, int teamId, int leagueId) {
+        return leagueDAO.getPlayerByNumber(playerNum, teamId, leagueId);
+    }
+
+    @Override
+    public void addPlayer(Player player, int teamId, int leagueId) {
+        leagueDAO.addPlayer(player, teamId, leagueId);
+    }
+
+    @Override
+    public void updatePlayer(int playerNum, Player player, int teamId, int leagueId) {
+        leagueDAO.updatePlayer(playerNum, player, teamId, leagueId);
+    }
+
+    @Override
+    public void deletePlayer(int playerNum, int teamId, int leagueId) {
+        leagueDAO.deletePlayer(playerNum, teamId, leagueId);
+    }
+
+    @Override
+    public List<Player> getAllPlayers(int teamId, int leagueId) {
+        return leagueDAO.getAllPlayers(teamId, leagueId);
+    }
+
+    @Override
+    public boolean containsLeague(int leagueId) {
+        List<League> leagues = leagueDAO.getAllLeagues();
+        for (League l : leagues ) {
+            if (l.getId() == leagueId) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
