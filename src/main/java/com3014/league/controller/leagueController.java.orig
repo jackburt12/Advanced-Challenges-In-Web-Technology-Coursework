@@ -209,6 +209,12 @@ public class leagueController {
     public Team populateTeam() {
         return new Team();
     }
+<<<<<<< HEAD
+    
+    public static List<Team> sortByPoints(List<Team> teams) {
+        Collections.sort(teams);
+        return teams;
+    }
 
     @RequestMapping(value = {"/{leagueId}/team/add_team"}, method = RequestMethod.POST)
     public String submitTeam(ModelMap model, @ModelAttribute League league, @RequestParam("teamName") String teamName, @RequestParam("teamLocation") String teamLocation, @RequestParam("leagueId") int leagueId) {
@@ -226,4 +232,6 @@ public class leagueController {
 
         return "redirect:/league/" + Integer.toString(leagueId);
     }
+=======
+>>>>>>> f495c6dd98d42ca6b3a438517cda27968b694e47
 }
