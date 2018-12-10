@@ -11,7 +11,10 @@
         <intercept-url pattern="/logout" access="permitAll"/>
         <intercept-url pattern="/login" access="permitAll"/>
         <intercept-url pattern="/league/all" access="permitAll"/>
-        <intercept-url pattern="/league/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/league/*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/league/*/team/*/delete" access="hasAnyRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/league/*/delete" access="hasAnyRole('ROLE_ADMIN')"/>
+
         <form-login login-processing-url="/j_spring_security_check" login-page="/login" default-target-url="/"
                     authentication-failure-url="/login?error" username-parameter="j_username"
                     password-parameter="j_password" />

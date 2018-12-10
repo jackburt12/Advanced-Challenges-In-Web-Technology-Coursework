@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -97,12 +98,15 @@ public class leagueController {
      * @param leagueId
      * @return the url with the league deleted
      */
+
     @RequestMapping(value = "/{leagueId}/delete", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteLeague(@PathVariable int leagueId) {
         leagueService.deleteLeague(leagueId);
         return "redirect:/league/all";
     }
-    
+
+
     /**
      * Adds a fixture to the list of fixtures in a league and updates team results
      * @param leagueId - id of league in which the fixture will be updated on
@@ -203,13 +207,13 @@ public class leagueController {
      * @return the same url with the teams deleted
      */
     @RequestMapping(value = "/{leagueId}/team/{teamId}/delete",  method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteTeam(
-            @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @ModelAttribute Team team
-    ) {
+            @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @ModelAttribute Team team) {
         leagueService.deleteTeam(teamId, leagueId);
         return "redirect:/league/{leagueId}";
     }
-    
+
     @ModelAttribute("league")
     public League populateLeague() {
         return new League();
