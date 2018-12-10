@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
     Document   : viewTeam
     Created on : 03-Dec-2018, 13:06:37
@@ -46,6 +47,11 @@
 
     <p>Matches played: ${team.matchPlayed}</p>
     <p>Points: ${team.points}</p>
+    <p>Location: ${team.location}</p>
+
+    <sec:authorize access="hasRole('ADMIN')">
+        <a class="btn btn-lg btn-primary btn-block" href="${team.id}/delete/"> Delete Team </a>
+    </sec:authorize>
 
 </div>
 <!-- Optional JavaScript -->
