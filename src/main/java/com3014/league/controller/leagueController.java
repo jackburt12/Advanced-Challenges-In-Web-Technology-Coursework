@@ -20,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-/**
- *
- * @author ahsan
- */
 @Controller
 @SessionAttributes("league")
 @RequestMapping("/league")
@@ -259,7 +255,37 @@ public class leagueController {
     @RequestMapping(value = "/{leagueId}/delete_fixture", method = RequestMethod.GET)
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteFixture(@PathVariable int leagueId, @RequestParam int fixtureId) {
+        Fixture fixture = leagueService.getFixtureByID(fixtureId, leagueId);
+        Team homeTeam = fixture.getHome();
+        Team awayTeam = fixture.getAway();
+        //if the home team won
+        if(fixture.getHomeScore() > fixture.getAwayScore()) {
+            homeTeam.setPoints(homeTeam.getPoints()-3);
+            homeTeam.setMatchPlayed(homeTeam.getMatchPlayed()-1);
+            homeTeam.setGoalDifference(homeTeam.getGoalDifference()-fixture.getHomeScore()+fixture.getAwayScore());
+            homeTeam.setWon(homeTeam.getWon()-1);
+            awayTeam.setMatchPlayed(awayTeam.getMatchPlayed()-1);
+            awayTeam.setGoalDifference(awayTeam.getGoalDifference()-fixture.getAwayScore()+fixture.getHomeScore());
+            awayTeam.setLoss(awayTeam.getLoss()-1);
+
+        } else if (fixture.getHomeScore() < fixture.getAwayScore()) {
+            awayTeam.setPoints(awayTeam.getPoints()-3);
+            awayTeam.setMatchPlayed(awayTeam.getMatchPlayed()-1);
+            awayTeam.setGoalDifference(awayTeam.getGoalDifference()-fixture.getAwayScore()+fixture.getHomeScore());
+            awayTeam.setWon(awayTeam.getWon()-1);
+            homeTeam.setMatchPlayed(homeTeam.getMatchPlayed()-1);
+            homeTeam.setGoalDifference(homeTeam.getGoalDifference()-fixture.getHomeScore()+fixture.getAwayScore());
+            homeTeam.setLoss(homeTeam.getLoss()-1);
+        } else {
+            awayTeam.setPoints(awayTeam.getPoints()-1);
+            homeTeam.setPoints(homeTeam.getPoints()-1);
+            awayTeam.setMatchPlayed(awayTeam.getMatchPlayed()-1);
+            homeTeam.setMatchPlayed(homeTeam.getMatchPlayed()-1);
+            homeTeam.setDraw(homeTeam.getDraw()-1);
+            awayTeam.setDraw(awayTeam.getDraw()-1);
+        }
         leagueService.deleteFixture(fixtureId, leagueId);
+
         return "redirect:/league/{leagueId}";
     }
 }

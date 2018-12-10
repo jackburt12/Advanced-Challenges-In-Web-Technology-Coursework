@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com3014.league.model;
 
 import java.util.List;
@@ -118,10 +114,6 @@ public class Team implements Comparable<Team>{
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-    
     public Player getPlayerByNumber(int playerNum) {
         Player player = null;
         for (Player p: players) {

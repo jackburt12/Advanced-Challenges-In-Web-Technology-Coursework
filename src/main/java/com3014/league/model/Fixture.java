@@ -45,36 +45,17 @@ public class Fixture {
         return home;
     }
 
-    public void setHome(Team home) {
-        this.home = home;
-    }
-
     public Team getAway() {
         return away;
-    }
-
-    public void setAway(Team away) {
-        this.away = away;
     }
 
     public int getHomeScore() {
         return homeScore;
     }
 
-    public void setHomeScore(int homeScore) {
-        this.homeScore = homeScore;
-    }
-
     public int getAwayScore() {
         return awayScore;
     }
 
-    public void setAwayScore(int awayScore) {
-        this.awayScore = awayScore;
-    }
-
-    public String getLocation() {
-        return home.getLocation();
-    }
 
 }

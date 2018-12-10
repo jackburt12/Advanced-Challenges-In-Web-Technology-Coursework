@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com3014.league.service.impl;
 
 import com3014.league.model.Fixture;
@@ -16,10 +11,6 @@ import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- *
- * @author ahsan
- */
 @Service
 public class leagueServiceImpl implements leagueService {
     
@@ -50,7 +41,7 @@ public class leagueServiceImpl implements leagueService {
     public void deleteLeague(League league) {
         leagueDAO.deleteLeague(league);
     }
-    
+
     @Override
     public void deleteLeague(int leagueId) {
         leagueDAO.deleteLeague(leagueId);

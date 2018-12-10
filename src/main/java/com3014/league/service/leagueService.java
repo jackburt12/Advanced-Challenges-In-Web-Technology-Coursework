@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com3014.league.service;
 
 import com3014.league.model.Fixture;
@@ -11,11 +6,6 @@ import com3014.league.model.Player;
 import com3014.league.model.Team;
 import java.util.List;
 
-/**
- *
- * @author ahsan
- * @author matt
- */
 public interface leagueService {
     public List<League> getAllLeagues();
     public League getLeagueByID(int leagueId);

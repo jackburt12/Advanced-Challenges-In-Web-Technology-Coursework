@@ -67,14 +67,6 @@ public class League {
     public void setTeam(Team team) {
         teamsList.add(team);
     }
-    
-    public void deleteTeam(int teamId) {
-        teamsList.remove(getTeamByID(teamId));
-    }
-    
-    public void updateTeam(int teamId, Team team) {
-        teamsList.set(teamsList.indexOf(getTeamByID(teamId)), team);
-    }
 
     public Fixture getFixtureByID(int fixtureId) {
         Fixture fixture = new Fixture();
@@ -88,10 +80,6 @@ public class League {
 
     public List<Fixture> getFixturesList() {
         return fixturesList;
-    }
-
-    public void setFixturesList(List<Fixture> fixturesList) {
-        this.fixturesList = fixturesList;
     }
 
     public void addFixture(Fixture fixture) {
