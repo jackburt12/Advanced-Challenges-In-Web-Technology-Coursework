@@ -170,7 +170,7 @@
     </sec:authorize>
     <div id="teamForm">
         <h3>Add a Team</h3>
-        <form action="/league/{leagueId}/team/add_team" method="post">
+        <form action="${league.id}/team/add_team" method="post">
             <div class="form-group">
                 <label for="teamName">Team Name:  </label>
                 <input type="text" name="teamName" value="" placeholder="Team Name" maxlength="25" id="teamName">
