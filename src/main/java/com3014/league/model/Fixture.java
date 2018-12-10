@@ -14,13 +14,25 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Fixture {
+    private static final Team temp = new Team();
     private int id;
-    private String home;
-    private String away;
+    private Team home;
+    private Team away;
     private int homeScore;
     private int awayScore;
-    private String location;
-    
+
+    public Fixture() {
+        this(0,temp,temp,0 ,0 );
+    }
+
+    public Fixture(int id, Team home, Team away, int homeScore, int awayScore) {
+        this.id = id;
+        this.home = home;
+        this.away = away;
+        this.homeScore = homeScore;
+        this.awayScore = awayScore;
+    }
+
     public int getId() {
         return id;
     }
@@ -29,19 +41,19 @@ public class Fixture {
         this.id = id;
     }
 
-    public String getHome() {
+    public Team getHome() {
         return home;
     }
 
-    public void setHome(String home) {
+    public void setHome(Team home) {
         this.home = home;
     }
 
-    public String getAway() {
+    public Team getAway() {
         return away;
     }
 
-    public void setAway(String away) {
+    public void setAway(Team away) {
         this.away = away;
     }
 
@@ -62,10 +74,7 @@ public class Fixture {
     }
 
     public String getLocation() {
-        return location;
+        return home.getLocation();
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
 }

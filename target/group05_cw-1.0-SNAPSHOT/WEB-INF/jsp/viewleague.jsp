@@ -198,13 +198,13 @@
                         <th>Away</th>
                     </tr>
                     <c:forEach items="${league.fixturesList}" varStatus="i" var="fixture">
-                        <tr id="${fixture.home}">
-                            <td> ${fixture.home} </td>
+                        <tr>
+                            <td> ${fixture.home.name} </td>
                             <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
-                            <td> ${fixture.away} </td>
+                            <td> ${fixture.away.name} </td>
                         </tr>
                         <script type="text/javascript">
-                            setMarkers("${fixture.location}","${fixture.home}");
+                            setMarkers("${fixture.home.location}","${fixture.home.name}");
                         </script>
                     </c:forEach>
                 </table>
