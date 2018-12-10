@@ -17,5 +17,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("team")
 @RequestMapping("/team")
 public class teamController {
-    
+
 }
+

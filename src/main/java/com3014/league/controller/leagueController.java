@@ -185,4 +185,21 @@ public class leagueController {
         Collections.sort(teams);
         return teams;
     }
+
+    @RequestMapping(value = {"/{leagueId}/team/add_team"}, method = RequestMethod.POST)
+    public String submitTeam(ModelMap model, @ModelAttribute League league, @RequestParam("teamName") String teamName, @RequestParam("teamLocation") String teamLocation, @RequestParam("leagueId") int leagueId) {
+        Team team = new Team(0, teamName, teamLocation);
+        int highestId = 0;
+        // Create a new unique ID for the new league
+        for (Team t : leagueService.getAllTeams(leagueId)) {
+            if (t.getId() > highestId) {
+                highestId = t.getId();
+            }
+        }
+        team.setId(highestId + 1);
+
+        leagueService.addTeam(team, leagueId);
+
+        return "redirect:/league/" + Integer.toString(leagueId);
+    }
 }

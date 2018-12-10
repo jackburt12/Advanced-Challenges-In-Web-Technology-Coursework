@@ -26,6 +26,22 @@ public class Team implements Comparable<Team>{
     private String location;
     private List<Player> players;
 
+    public Team() {
+        this(0, "", "");
+    }
+
+    public Team(int id, String name, String location) {
+        this.id = id;
+        this.Name = name;
+        this.matchPlayed = 0;
+        this.won = 0;
+        this.draw = 0;
+        this.loss = 0;
+        this.goalDifference = 0;
+        this.points = 0;
+        this.location = location;
+    }
+
     public int getId() {
         return id;
     }

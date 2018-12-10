@@ -23,6 +23,9 @@
             width:400px;
             height:500px;
         }
+        #teamForm {
+            display: none;
+        }
         #fixForm {
             display:none;
         }
@@ -97,6 +100,11 @@
             $("#fixForm").slideDown();
         }
 
+        function showTeamForm() {
+            $("#teamButton").hide();
+            $("#teamForm").slideDown();
+        }
+
         // shows the rest of the form
         var optValue;
         var opt;
@@ -154,6 +162,26 @@
         </tr>
         </c:forEach>
     </table>
+
+    <sec:authorize access="hasRole('ADMIN')">
+        <button class="btn btn-lg btn-primary btn-block" id="teamButton" onclick="showTeamForm()"> Add Team </button>
+    </sec:authorize>
+    <div id="teamForm">
+        <h3>Add a Team</h3>
+        <form action="/league/{leagueId}/team/add_team" method="post">
+            <div class="form-group">
+                <label for="teamName">Team Name:  </label>
+                <input type="text" name="teamName" value="" placeholder="Team Name" maxlength="25" id="teamName">
+            </div>
+            <div class="form-group">
+                <label for="teamLocation">Location of Team:  </label>
+                <input type="text" name="teamLocation" value="" placeholder="Team Location" id="teamLocation" max="99">
+            </div>
+            <input type="hidden" name="leagueId" value="${league.id}">
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
+        </form>
+    </div>
+
 </div>
 <div class="container">
     <div class="row">
