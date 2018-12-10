@@ -178,7 +178,7 @@
                     </c:forEach>
                 </table>
                 <sec:authorize access="hasRole('ADMIN')">
-                    <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures() "> Add Result </button>
+                    <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures()"> Add Result </button>
                 </sec:authorize>
                 <div id="fixForm">
                     <form action="${league.id}" method="post">
