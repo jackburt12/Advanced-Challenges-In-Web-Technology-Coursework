@@ -90,20 +90,6 @@ public class leagueController {
     }
     
     /**
-     * 
-     * @param leagueId
-     * @return the url with the league deleted
-     */
-
-    @RequestMapping(value = "/{leagueId}/delete", method = RequestMethod.GET)
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String deleteLeague(@PathVariable int leagueId) {
-        leagueService.deleteLeague(leagueId);
-        return "redirect:/league/all";
-    }
-
-
-    /**
      * Adds a fixture to the list of fixtures in a league and updates team results
      * @param leagueId - id of league in which the fixture will be updated on
      * @param model
@@ -222,7 +208,17 @@ public class leagueController {
     public Team populateTeam() {
         return new Team();
     }
-
+    
+    
+    /**
+     * Creates a new team and links it to a specific league
+     * @param model
+     * @param league
+     * @param teamName
+     * @param teamLocation 
+     * @param leagueId
+     * @return back to the league page showing a team has been added
+     */
     @RequestMapping(value = {"/{leagueId}/team/add_team"}, method = RequestMethod.POST)
     public String submitTeam(ModelMap model, @ModelAttribute League league, @RequestParam("teamName") String teamName, @RequestParam("teamLocation") String teamLocation, @RequestParam("leagueId") int leagueId) {
         Team team = new Team(0, teamName, teamLocation);
@@ -240,6 +236,16 @@ public class leagueController {
         return "redirect:/league/" + Integer.toString(leagueId);
     }
 
+    /**
+     * Adds a new player and links it to a team
+     * @param leagueId
+     * @param teamId
+     * @param model
+     * @param number
+     * @param name
+     * @param position
+     * @return back to the team page to show the player
+     */
     @RequestMapping(value = "/{leagueId}/team/{teamId}",  method = RequestMethod.POST)
     public String addPlayer(
             @PathVariable int leagueId, @PathVariable int teamId, ModelMap model, @RequestParam("number") int number,
@@ -252,13 +258,19 @@ public class leagueController {
         return "redirect:/league/{leagueId}/team/{teamId}";
     }
 
+    /**
+     * 
+     * @param leagueId
+     * @param fixtureId
+     * @return back to the league page to show fixture deleted
+     */
     @RequestMapping(value = "/{leagueId}/delete_fixture", method = RequestMethod.GET)
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteFixture(@PathVariable int leagueId, @RequestParam int fixtureId) {
         Fixture fixture = leagueService.getFixtureByID(fixtureId, leagueId);
         Team homeTeam = fixture.getHome();
         Team awayTeam = fixture.getAway();
-        //if the home team won
+        //if the home team won, it takes the win away from the team and the loss away from the away team and points readjusted
         if(fixture.getHomeScore() > fixture.getAwayScore()) {
             homeTeam.setPoints(homeTeam.getPoints()-3);
             homeTeam.setMatchPlayed(homeTeam.getMatchPlayed()-1);
@@ -268,6 +280,7 @@ public class leagueController {
             awayTeam.setGoalDifference(awayTeam.getGoalDifference()-fixture.getAwayScore()+fixture.getHomeScore());
             awayTeam.setLoss(awayTeam.getLoss()-1);
 
+            // if the away team won it takes the win away from the team and the loss away from the away team and points readjusted
         } else if (fixture.getHomeScore() < fixture.getAwayScore()) {
             awayTeam.setPoints(awayTeam.getPoints()-3);
             awayTeam.setMatchPlayed(awayTeam.getMatchPlayed()-1);
@@ -276,6 +289,8 @@ public class leagueController {
             homeTeam.setMatchPlayed(homeTeam.getMatchPlayed()-1);
             homeTeam.setGoalDifference(homeTeam.getGoalDifference()-fixture.getHomeScore()+fixture.getAwayScore());
             homeTeam.setLoss(homeTeam.getLoss()-1);
+            
+            // if both teams drew, the draws are taken away from them and points adjusted
         } else {
             awayTeam.setPoints(awayTeam.getPoints()-1);
             homeTeam.setPoints(homeTeam.getPoints()-1);

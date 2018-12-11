@@ -38,6 +38,11 @@ public class leagueDAO {
         leagues.add(league);
     }
     
+    /**
+     * 
+     * @param leagueId
+     * @return a specific league by id
+     */
     public League getLeague(int leagueId) {
         League league = new League();
         for (League l : leagues) {
@@ -48,28 +53,6 @@ public class leagueDAO {
         return league;
     }
     
-    public void updateLeague(League league1, League league2) {
-        leagues.set(leagues.indexOf(league1), league2);
-    }
-    
-    public void updateLeague(int leagueId, League league2) {
-        leagues.set(leagues.indexOf(getLeague(leagueId)), league2);
-    }
-
-    public void deleteLeague(League league) {
-        leagues.remove(league);
-    }
-    
-    public void deleteLeague(int leagueId) {
-        League league = new League();
-        for (League l: leagues) {
-            if (l.getId() == leagueId) {
-                league = l;
-            }
-        }
-        leagues.remove(league);
-    }
-    
     public Team getTeamByID(int teamId, int leagueId) {
         return getLeague(leagueId).getTeamByID(teamId);
     }
@@ -78,23 +61,12 @@ public class leagueDAO {
         getLeague(leagueId).getTeamsList().add(team);
     }
     
-    public void updateTeam(int teamId, Team team, int leagueId) {
-        getLeague(leagueId).getTeamsList().set(getLeague(leagueId).getTeamsList().indexOf(getTeamByID(teamId, leagueId)), team);
-    }
-    
     public void deleteTeam(int teamId, int leagueId) {
         getLeague(leagueId).getTeamsList().remove(getTeamByID(teamId, leagueId));
-    }
-    public Fixture getFixtureByID(int fixtureId, int leagueId) {
-        return getLeague(leagueId).getFixtureByID(fixtureId);
     }
 
     public void addFixture(Fixture fixture, int leagueId) {
         getLeague(leagueId).addFixture(fixture);
-    }
-
-    public void updateFixture(int fixtureId, Fixture fixture, int leagueId) {
-        getLeague(leagueId).updateFixture(fixture, fixtureId);
     }
 
     public void deleteFixture(int fixtureId, int leagueId) {
@@ -134,12 +106,14 @@ public class leagueDAO {
         List<Player> pL3 = new ArrayList<>();
         Player p5 = new Player("Mohamed Salah", 11, Player.Position.FORWARD);
         pL3.add(p5);
+        t3.setPlayers(pL3);
         teams.add(t3);
         
         Team t4 = new Team(3, "Tottenham Hotspur", "Wembley Stadium");
         List<Player> pL4 = new ArrayList<>();
         Player p6 = new Player("Dele Alli", 20, Player.Position.MIDFIELDER);
         pL4.add(p6);
+        t4.setPlayers(pL4);
         teams.add(t4);
 
         l1.setTeamsList(teams);
@@ -155,15 +129,15 @@ public class leagueDAO {
         getLeague(leagueId).getTeamByID(teamId).addPlayer(player);
     }
 
-    public void updatePlayer(int playerNum, Player player, int teamId, int leagueId) {
-        getLeague(leagueId).getTeamByID(teamId).updatePlayer(playerNum, player);
-    }
-
     public void deletePlayer(int playerNum, int teamId, int leagueId) {
         getLeague(leagueId).getTeamByID(teamId).deletePlayer(playerNum);
     }
 
     public List<Player> getAllPlayers(int teamId, int leagueId) {
         return getLeague(leagueId).getTeamByID(teamId).getPlayers();
+    }
+    
+    public Fixture getFixtureByID(int fixtureId, int leagueId) {
+        return getLeague(leagueId).getFixtureByID(fixtureId);
     }
 }

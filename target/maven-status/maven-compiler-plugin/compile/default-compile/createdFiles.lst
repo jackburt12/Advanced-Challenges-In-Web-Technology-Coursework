@@ -1,7 +1,6 @@
 com3014\league\model\League.class
 com3014\league\model\Team.class
 com3014\league\model\Player.class
-com3014\league\service\impl\leagueServiceImpl.class
 com3014\league\service\leagueService.class
 com3014\league\service\fixtureService.class
 com3014\league\model\Fixture.class

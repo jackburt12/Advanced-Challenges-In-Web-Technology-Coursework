@@ -38,16 +38,6 @@ public class leagueServiceImpl implements leagueService {
     }
 
     @Override
-    public void deleteLeague(League league) {
-        leagueDAO.deleteLeague(league);
-    }
-
-    @Override
-    public void deleteLeague(int leagueId) {
-        leagueDAO.deleteLeague(leagueId);
-    }
-
-    @Override
     public List<League> getAllLeagues() {
         return leagueDAO.getAllLeagues();
     }
@@ -69,19 +59,10 @@ public class leagueServiceImpl implements leagueService {
         return leagueDAO.getLeague(leagueId);
     }
 
-    @Override
-    public void updateLeague(int leagueId, League league) {
-        leagueDAO.updateLeague(leagueId, league);
-    }
 
     @Override
     public void addLeague(League league) {
         leagueDAO.addLeague(league);
-    }
-
-    @Override
-    public void updateTeam(int teamId, Team team, int leagueId) {
-        leagueDAO.updateTeam(teamId, team, leagueId);
     }
 
     @Override
@@ -92,11 +73,6 @@ public class leagueServiceImpl implements leagueService {
     @Override
     public void addFixture(Fixture fixture, int leagueId) {
         leagueDAO.addFixture(fixture, leagueId);
-    }
-
-    @Override
-    public void updateFixture(int fixtureId, Fixture fixture, int leagueId) {
-        leagueDAO.updateFixture(fixtureId, fixture, leagueId);
     }
 
     @Override
@@ -119,15 +95,6 @@ public class leagueServiceImpl implements leagueService {
         leagueDAO.addPlayer(player, teamId, leagueId);
     }
 
-    @Override
-    public void updatePlayer(int playerNum, Player player, int teamId, int leagueId) {
-        leagueDAO.updatePlayer(playerNum, player, teamId, leagueId);
-    }
-
-    @Override
-    public void deletePlayer(int playerNum, int teamId, int leagueId) {
-        leagueDAO.deletePlayer(playerNum, teamId, leagueId);
-    }
 
     @Override
     public List<Player> getAllPlayers(int teamId, int leagueId) {
