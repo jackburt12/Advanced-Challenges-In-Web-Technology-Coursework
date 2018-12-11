@@ -64,7 +64,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="/league/all">League Viewer</a>
+    <a class="navbar-brand" href="all">League Viewer</a>
     <c:url var="logoutUrl" value="/j_spring_security_logout"/>
     <form action="${logoutUrl}" method="post">
         <input class="btn btn-lg btn-primary btn-block" type="submit" value="Logout"/>

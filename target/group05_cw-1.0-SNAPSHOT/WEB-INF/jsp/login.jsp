@@ -18,7 +18,7 @@ Time: 1:28 AM
 <body>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="/league/all">League Viewer</a>
+        <a class="navbar-brand" href="all">League Viewer</a>
     </nav>
     <div class="jumbotron text-center">
         <div class="container">
