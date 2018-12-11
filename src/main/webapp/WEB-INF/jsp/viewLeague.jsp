@@ -133,34 +133,6 @@
                 }
             });
             
-            // disable fixture submit button unless valid
-            $('#formFix :input[type="submit"]').prop('disabled', true);
-            
-            // checks if the select boxes aren't empty
-            function checkselect() {
-                if(!$('#homeTeam').val() || !$('#awayTeam').val()) {
-                    $('#formFix :input[type="submit"]').prop('disabled', true);
-                    return false;
-                }
-                else {
-                    console.log("true");
-                    return true;
-                }
-            }
-            
-            // checks home select box for validity
-            $('#homeTeam').mouseup(function() {
-                if(checkselect()) {
-                    $('#formFix :input[type="submit"]').prop('disabled', false);
-                }
-            });
-            
-            // checks away select box for validity
-            $('#awayTeam').mouseup(function() {
-                if(checkselect()) {
-                    $('#formFix :input[type="submit"]').prop('disabled', false);
-                }
-            });
         });
         // sets marker to the location variable in the team model
         function setMarkers(area,name) {
