@@ -37,7 +37,7 @@
         </form>
     </sec:authorize>
     <sec:authorize access="isAnonymous()">
-        <form action="/login">
+        <form action="login">
             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login"/>
         </form>
     </sec:authorize>
