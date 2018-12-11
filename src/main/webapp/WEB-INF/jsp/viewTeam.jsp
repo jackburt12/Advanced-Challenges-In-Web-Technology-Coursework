@@ -13,6 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>${team.name}</title>
 
     <style>
@@ -23,10 +24,42 @@
     </style>
 
     <script type="text/javascript">
+        $(document ).ready(function() {
+            
+            // disable player submit button
+            $('#formPlayer :input[type="submit"]').prop('disabled', true);
+            
+            // check if the player input is valid for submission 
+            function checkname() {
+                if (!$('#name').val().trim()) {
+                  $('#formPlayer :input[type="submit"]').prop('disabled', true);
+                  //$('#teamLocation errorMSG').next().text("location must not have punctuation");
+                  $('#name').next().text("name must not be empty");
+                  console.log("invalid name");
+                  return false;
+                } else {
+                   console.log("valid name");
+                   $('#name').next().empty();
+                   return true;
+                }
+            }
+            
+            // check if the player name input field is correct and turns on submission if it is
+            $('#name').keyup(function() {
+                if(checkname()){
+                    console.log("we made it");
+                    $('#formPlayer :input[type="submit"]').prop('disabled', false);
+                    console.log("submit now");
+                }
+            });
+        });
+        
+        
         function showPlayerForm() {
             $("#playerFormButton").hide();
             $("#playerForm").slideDown();
         }
+
     </script>
 </head>
 <body>
@@ -64,7 +97,7 @@
     </sec:authorize>
     <div id="playerForm">
         <h3>Add a Player</h3>
-        <form action="./${team.id}" method="post">
+        <form action="./${team.id}" method="post" id = "formPlayer">
             <div class="form-group">
                 <label for="name">Player Name:  </label>
                 <input type="text" name="name" value="" placeholder="Player Name" maxlength="25" id="name">

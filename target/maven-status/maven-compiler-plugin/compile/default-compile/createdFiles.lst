@@ -5,7 +5,6 @@ com3014\league\service\impl\leagueServiceImpl.class
 com3014\league\service\leagueService.class
 com3014\league\service\fixtureService.class
 com3014\league\model\Fixture.class
-com3014\league\controller\teamController.class
 com3014\league\dao\fixtureDAO.class
 com3014\league\dao\leagueDAO.class
 com3014\league\controller\leagueController.class

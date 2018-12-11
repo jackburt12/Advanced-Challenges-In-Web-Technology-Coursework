@@ -66,11 +66,99 @@
             map = new google.maps.Map(document.getElementById("map_container"),myOptions);
 
             var place = "England";
+            // displays england on the map
             geocoder.geocode( { 'address': place }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
                 } else {
                     alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+            
+            // disables submit button unless fields are fulfilled
+            $('#teamForm :input[type="submit"]').prop('disabled', true);
+            
+            // checks if location field is valid either no punctuation or no 
+            function checklocation() {
+                if(!$('#teamLocation').val().trim()) {
+                    return false;
+                }
+                if (/[.,\/#!$%\^&\*;:{}=\-_`~()'']/g.test($('#teamLocation').val())) {
+                  $('#teamForm :input[type="submit"]').prop('disabled', true);
+                  //$('#teamLocation errorMSG').next().text("location must not have punctuation");
+                  $('#teamLocation').next().text("location must not have punctuation");
+                  console.log("failed because : " + $('#teamLocation').val());
+                  return false;
+                } else {
+                geocoder.geocode( { 'address': $('#teamLocation').val() }, function(results, status) {
+                    if (status != google.maps.GeocoderStatus.OK) {
+                        $('#teamForm :input[type="submit"]').prop('disabled', true);
+                        $('#teamLocation').next().text("location does not exist");
+                        console.log("does not exist");
+                        return false;
+                    }
+                });
+                $('#teamLocation').next().empty();
+                return true;
+                }
+            }
+            
+            // check if name isn't empty
+            function checkteamname() {
+                if (!$('#teamName').val().trim()) {
+                  $('#teamForm :input[type="submit"]').prop('disabled', true);
+                  //$('#teamLocation errorMSG').next().text("location must not have punctuation");
+                  $('#teamName').next().text("name must not be empty");
+                  return false;
+                } else {
+                   $('#teamName').next().empty();
+                   return true;
+                }
+            }
+            
+            // check if both fields are valid for the form to be able to submit
+            $('#teamLocation').keyup(function() {
+                if(checkteamname()){
+                    if(checklocation()) {
+                        $('#teamForm :input[type="submit"]').prop('disabled', false);
+                    }
+                }
+            });
+            // check if both fields are valid for the form to be able to submit
+            $('#teamName').keyup(function() {
+                if(checkteamname()){
+                    if(checklocation()) {
+                        $('#teamForm :input[type="submit"]').prop('disabled', false);
+                    }
+                }
+            });
+            
+            // disable fixture submit button unless valid
+            $('#formFix :input[type="submit"]').prop('disabled', true);
+            
+            // checks if the select boxes aren't empty
+            function checkselect() {
+                if(!$('#homeTeam').val() || !$('#awayTeam').val()) {
+                    $('#formFix :input[type="submit"]').prop('disabled', true);
+                    return false;
+                }
+                else {
+                    console.log("true");
+                    return true;
+                }
+            }
+            
+            // checks home select box for validity
+            $('#homeTeam').mouseup(function() {
+                if(checkselect()) {
+                    $('#formFix :input[type="submit"]').prop('disabled', false);
+                }
+            });
+            
+            // checks away select box for validity
+            $('#awayTeam').mouseup(function() {
+                if(checkselect()) {
+                    $('#formFix :input[type="submit"]').prop('disabled', false);
                 }
             });
         });
@@ -120,8 +208,6 @@
             opt = $("#awayTeam option[value='" + optValue + "']");
             $("#awayTeam option[value='" + optValue + "']").remove();
         }
-        
-        
 
     </script>
 
@@ -174,14 +260,14 @@
         <form action="${league.id}/team/add_team" method="post">
             <div class="form-group">
                 <label for="teamName">Team Name:  </label>
-                <input type="text" name="teamName" value="" placeholder="Team Name" maxlength="25" id="teamName">
+                <input type="text" name="teamName" value="" placeholder="Team Name" maxlength="25" id="teamName"> <div> </div>
             </div>
             <div class="form-group">
                 <label for="teamLocation">Location of Team:  </label>
-                <input type="text" name="teamLocation" value="" placeholder="Team Location" id="teamLocation" max="99">
+                <input type="text" name="teamLocation" value="" placeholder="Team Location" id="teamLocation" max="99"> <div id="errorMSG"></div>
             </div>
             <input type="hidden" name="leagueId" value="${league.id}">
-            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit"/>
         </form>
     </div>
 
@@ -224,13 +310,13 @@
                     <button class="btn btn-lg btn-primary btn-block" id="fixButton" onclick="showFixtures()"> Add Result </button>
                 </sec:authorize>
                 <div id="fixForm">
-                    <form action="${league.id}" method="post" >
+                    <form action="${league.id}" method="post" id ="formFix" >
                         <div class="container">
                             <h3>Enter Match Details</h3>
                             <div class="form-group">
                                 <label for="homeTeam">Home Team:</label>
                                 <select id="homeTeam" name="home" onchange="showFixtures2(this)">
-                                    <option value = "SelectTeam"></option>
+                                    <option value = ""></option>
                                     <c:forEach items="${teams}" varStatus="i" var="team">
                                         <option value="${team.id}" >${team.name}</option>
                                     </c:forEach>
@@ -239,7 +325,7 @@
                             <div class="form-group2">
                                 <label for="awayTeam">Away Team:</label>
                                 <select id = "awayTeam" name = "away" >
-                                    <option value = "SelectTeam"></option>
+                                    <option value = ""></option>
                                     <c:forEach items="${teams}" varStatus="i" var="team">
                                         <option value="${team.id}">${team.name}</option>
                                     </c:forEach>
