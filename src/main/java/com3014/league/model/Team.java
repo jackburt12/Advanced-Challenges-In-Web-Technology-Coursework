@@ -3,6 +3,7 @@ package com3014.league.model;
 
 import java.util.List;
 import org.springframework.stereotype.Component;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Team implements Comparable<Team>{
     private int goalDifference;
     private int points;
     private String location;
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
 
     public Team() {
         this(0, "", "");
