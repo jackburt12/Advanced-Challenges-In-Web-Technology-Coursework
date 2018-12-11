@@ -87,14 +87,12 @@
                   $('#teamForm :input[type="submit"]').prop('disabled', true);
                   //$('#teamLocation errorMSG').next().text("location must not have punctuation");
                   $('#teamLocation').next().text("location must not have punctuation");
-                  console.log("failed because : " + $('#teamLocation').val());
                   return false;
                 } else {
                 geocoder.geocode( { 'address': $('#teamLocation').val() }, function(results, status) {
                     if (status != google.maps.GeocoderStatus.OK) {
                         $('#teamForm :input[type="submit"]').prop('disabled', true);
                         $('#teamLocation').next().text("location does not exist");
-                        console.log("does not exist");
                         return false;
                     }
                 });
@@ -260,7 +258,7 @@
                         </sec:authorize>
                     </tr>
                     <c:forEach items="${league.fixturesList}" varStatus="i" var="fixture">
-                        <tr>
+                        <tr id="${fixture.home.name}">
                             <td> ${fixture.home.name} </td>
                             <td> ${fixture.homeScore} - ${fixture.awayScore}</td>
                             <td> ${fixture.away.name} </td>
