@@ -35,10 +35,8 @@
                   $('#formPlayer :input[type="submit"]').prop('disabled', true);
                   //$('#teamLocation errorMSG').next().text("location must not have punctuation");
                   $('#name').next().text("name must not be empty");
-                  console.log("invalid name");
                   return false;
                 } else {
-                   console.log("valid name");
                    $('#name').next().empty();
                    return true;
                 }
@@ -47,9 +45,7 @@
             // check if the player name input field is correct and turns on submission if it is
             $('#name').keyup(function() {
                 if(checkname()){
-                    console.log("we made it");
                     $('#formPlayer :input[type="submit"]').prop('disabled', false);
-                    console.log("submit now");
                 }
             });
         });
